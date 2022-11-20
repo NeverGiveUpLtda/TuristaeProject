@@ -10,6 +10,7 @@ export class SaibaMaisComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    window.localStorage.setItem("url", "saiba-mais");
   }
 
 }

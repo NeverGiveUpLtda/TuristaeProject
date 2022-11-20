@@ -10,6 +10,7 @@ export class SignUpComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    window.localStorage.setItem("url", "sign-up");
   }
 
 }

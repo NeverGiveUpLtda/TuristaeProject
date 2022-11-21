@@ -1,0 +1,48 @@
+.pessoaEstilo{
+  background-color: #243542;
+  color: #EBEBEB;
+}
+
+
+.nomeEstilo{
+  background-color: #243542;
+  color: #EBEBEB;
+}
+
+.dataNascEstilo{
+  background-color: #243542;
+  color: #EBEBEB;
+}
+
+.senhaEstilo{
+  background-color: #243542;
+  color: white;
+  height: 45px;
+}
+
+.emailEstilo{
+  background-color: #243542;
+  color: #EBEBEB;
+  height: 45px;
+}
+
+.cadastrarEsilo{
+  background-color: #38B0FA;
+  color: #162027;
+  height: 45px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+
+}
+.card{
+  background-color: #EBEBEB;
+  border: 2px solid rgb(167, 167, 167);
+  border-radius: 50px;
+  min-height: 80vh;
+  min-width: 55vh;
+  margin-top: 10vh;
+}
+
+.background{
+  background-color: #d3d3d3;
+}

@@ -1,6 +1,7 @@
 .senhaEstilo{
   background-color: #243542;
   color: #EBEBEB;
+  height: 45px;
 }
 
 .emailEstilo{
@@ -13,6 +14,9 @@
   background-color: #38B0FA;
   color: #162027;
   height: 45px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+
 }
 .card{
   background-color: #EBEBEB;
@@ -23,5 +27,5 @@
 }
 
 .background{
-  background-color: #EBEBEB;
+  background-color: #d3d3d3;
 }

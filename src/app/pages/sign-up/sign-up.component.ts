@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpComponent implements OnInit {
 
+  tipoCadastro: string = "1";
+
   constructor() { }
 
   ngOnInit(): void {

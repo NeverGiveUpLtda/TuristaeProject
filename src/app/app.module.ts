@@ -12,6 +12,7 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { SaibaMaisComponent } from './pages/saiba-mais/saiba-mais.component';
 import { EditUserComponent } from './pages/edit-user/edit-user.component';
 import { ContentComponent } from './pages/content/content.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,12 +24,13 @@ import { ContentComponent } from './pages/content/content.component';
     SignUpComponent,
     SaibaMaisComponent,
     EditUserComponent,
-    ContentComponent
+    ContentComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

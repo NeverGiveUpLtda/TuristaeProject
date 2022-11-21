@@ -1,0 +1,27 @@
+.senhaEstilo{
+  background-color: #243542;
+  color: #EBEBEB;
+}
+
+.emailEstilo{
+  background-color: #243542;
+  color: #EBEBEB;
+  height: 45px;
+}
+
+.entrarEstilo{
+  background-color: #38B0FA;
+  color: #162027;
+  height: 45px;
+}
+.card{
+  background-color: #EBEBEB;
+  border: 2px solid rgb(167, 167, 167);
+  border-radius: 50px;
+  height: 500px;
+  width: 500px;
+}
+
+.background{
+  background-color: #EBEBEB;
+}

@@ -1,0 +1,176 @@
+<div
+  class="d-flex flex-row justify-content-center background"
+  style="min-height: 100%"
+>
+    <div class="align-items-center card mb-5">
+      <div style="width: 200px; padding: 10vh 0vh 10vh 0vh;">
+        <div>
+          <h3>Criar uma conta</h3>
+        </div>
+        <div class="mb-3">
+          <select
+            class="form-select form-select-lg pessoaEstilo"
+            name=""
+            id=""
+            style="width: 200px; height: 50px; font-size: medium;"
+            [(ngModel)]="tipoCadastro"
+          >
+            <option value="1">Pessoa Física</option>
+            <option value="0">Pessoa Juridica</option>
+          </select>
+        </div>
+        <div *ngIf="tipoCadastro === '1'">
+
+
+          <div class="mb-3">
+            <label class="form-label"><h3>Nome</h3></label>
+            <input
+              class="form-control nomeEstilo"
+              type="text"
+              placeholder="Nome"
+              style="width: 200px"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label"><h3>Data de Nascimento</h3></label>
+            <input
+              class="form-control dataNascEstilo"
+              type="date"
+              placeholder="Nome"
+              style="width: 200px"
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label"><h3>Login</h3></label>
+            <input
+              class="form-control emailEstilo"
+              type="email"
+              placeholder="email@example.com"
+              style="width: 200px"
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label"><h3>Senha</h3></label>
+            <input
+              class="form-control senhaEstilo"
+              type="password"
+              placeholder="Senha"
+              style="width: 200px"
+            />
+          </div>
+          <div class="w-100">
+            <a class="btn cadastrarEsilo w-100">Cadastrar</a>
+          </div>
+        </div>
+        <div *ngIf="tipoCadastro === '0'">
+
+
+          <div class="mb-3">
+            <label class="form-label"><h3>CNPJ</h3></label>
+            <input
+              class="form-control nomeEstilo"
+              type="text"
+              placeholder="CNPJ"
+              style="width: 200px"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label"><h3>Senha</h3></label>
+            <input
+              class="form-control nomeEstilo"
+              type="password"
+              placeholder="senha"
+              style="width: 200px"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label"><h3>Razão Social</h3></label>
+            <input
+              class="form-control nomeEstilo"
+              type="text"
+              placeholder="Razão social"
+              style="width: 200px"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label"><h3>CEP</h3></label>
+            <input
+              class="form-control nomeEstilo"
+              type="text"
+              placeholder="CEP"
+              style="width: 200px"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label"><h3>Número</h3></label>
+            <input
+              class="form-control senhaEstilo"
+              type="number"
+              placeholder="Número"
+              style="width: 200px"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label"><h3>Logadouro</h3></label>
+            <input
+              class="form-control senhaEstilo"
+              type="text"
+              placeholder="Rua"
+              style="width: 200px"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label"><h3>Bairro</h3></label>
+            <input
+              class="form-control senhaEstilo"
+              type="text"
+              placeholder="Bairro"
+              style="width: 200px"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label"><h3>Nome Fantasia</h3></label>
+            <input
+              class="form-control senhaEstilo"
+              type="text"
+              placeholder="Nome Fantasia"
+              style="width: 200px"
+            />
+          </div>
+
+          <div class="mb-3 d-flex flex-row justify-content-between align-items-center w-100">
+            <div>
+              <label class="form-label"><h3>Cidade</h3></label>
+              <input
+                class="form-control senhaEstilo"
+                type="text"
+                placeholder="Cidade"
+                style="width: 90px"
+              />
+            </div>
+            <div>
+              <label class="form-label"><h3>UF</h3></label>
+              <input
+                class="form-control senhaEstilo"
+                type="text"
+                placeholder="UF"
+                style="width: 90px"
+              />
+            </div>
+          </div>
+
+          <div class="w-100">
+            <a class="btn cadastrarEsilo w-100">Cadastrar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

@@ -13,6 +13,7 @@ import { SaibaMaisComponent } from './pages/saiba-mais/saiba-mais.component';
 import { EditUserComponent } from './pages/edit-user/edit-user.component';
 import { ContentComponent } from './pages/content/content.component';
 import { FormsModule } from '@angular/forms';
+import { InserirTurismoComponent } from './pages/inserir-turismo/inserir-turismo.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     SaibaMaisComponent,
     EditUserComponent,
     ContentComponent,
+    InserirTurismoComponent,
   ],
   imports: [
     BrowserModule,

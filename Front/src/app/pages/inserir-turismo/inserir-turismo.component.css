@@ -3,10 +3,16 @@
   opacity: 1; /* Firefox */
 }
 
-.senhaEstilo{
+.descricaoEstilo{
   background-color: #243542;
   color: #EBEBEB;
-  height: 45px;
+  height: 105px;
+}
+
+.bannerEstilo{
+  background-color: #243542;
+  color: #EBEBEB;
+  height: 105px;
 }
 
 .emailEstilo{
@@ -26,9 +32,10 @@
 .card{
   background-color: #EBEBEB;
   border: 2px solid rgb(167, 167, 167);
+  margin-top: 5vh;
   border-radius: 50px;
-  height: 65vh;
-  width: 55vh;
+  height: 100vh;
+  width: 65vh;
 }
 
 .background{

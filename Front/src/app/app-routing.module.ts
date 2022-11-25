@@ -6,7 +6,7 @@ import { EditUserComponent } from './pages/edit-user/edit-user.component';
 import { SaibaMaisComponent } from './pages/saiba-mais/saiba-mais.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ContentComponent } from './pages/content/content.component';
-
+import { InserirTurismoComponent} from './pages/inserir-turismo/inserir-turismo.component'
 const routes: Routes = [
   { path: '', component: HomeComponent,
     children: [
@@ -17,7 +17,8 @@ const routes: Routes = [
   { path: '**', redirectTo: 'page-not-found' },
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
-  { path: 'edit-user', component: EditUserComponent }
+  { path: 'edit-user', component: EditUserComponent },
+  { path: 'inserir-turismo', component: InserirTurismoComponent }
 ];
 
 @NgModule({

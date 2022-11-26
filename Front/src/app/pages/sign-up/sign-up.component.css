@@ -6,29 +6,34 @@
 .pessoaEstilo{
   background-color: #243542;
   color: #EBEBEB;
+  width: 200px;
 }
 
 
 .nomeEstilo{
   background-color: #243542;
   color: #EBEBEB;
+  width: 200px;
 }
 
 .dataNascEstilo{
   background-color: #243542;
   color: #EBEBEB;
+  width: 200px;
 }
 
 .senhaEstilo{
   background-color: #243542;
   color: white;
   height: 45px;
+  width: 200px;
 }
 
 .emailEstilo{
   background-color: #243542;
   color: #EBEBEB;
   height: 45px;
+  width: 200px;
 }
 
 .cadastrarEsilo{
@@ -39,6 +44,72 @@
   margin-bottom: 10px;
 
 }
+
+.CNPJEstilo{
+
+  background-color: #243542;
+  color: #EBEBEB;
+  width: 200px;
+
+}
+
+.razaosocialEstilo{
+  background-color: #243542;
+  color: white;
+  height: 45px;
+  width: 200px;
+}
+
+.CEPEstilo{
+  background-color: #243542;
+  color: white;
+  height: 45px;
+  width: 200px;
+}
+
+.numeroEstilo{
+  background-color: #243542;
+  color: white;
+  height: 45px;
+  width: 200px;
+}
+
+.logradouroEstilo{
+  background-color: #243542;
+  color: white;
+  height: 45px;
+  width: 200px;
+}
+
+.bairroEstilo{
+  background-color: #243542;
+  color: white;
+  height: 45px;
+  width: 200px;
+}
+
+.nomefantasiaEstilo{
+  background-color: #243542;
+  color: white;
+  height: 45px;
+  width: 200px;
+}
+
+.cidadeEstilo{
+  background-color: #243542;
+  color: white;
+  height: 45px ;
+  width: 90px ;
+}
+
+.UFEstilo{
+  background-color: #243542;
+  color: white;
+  height: 45px ;
+  width: 90px ;
+
+}
+
 .card{
   background-color: #EBEBEB;
   border: 2px solid rgb(167, 167, 167);

@@ -10,6 +10,7 @@ export class InserirTurismoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    window.localStorage.setItem("url", "inserir-turismo");
   }
 
 }

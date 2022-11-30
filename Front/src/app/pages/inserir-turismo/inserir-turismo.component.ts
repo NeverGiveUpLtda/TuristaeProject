@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inserir-turismo',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InserirTurismoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _router: Router) { }
 
   ngOnInit(): void {
+    if(window.localStorage.getItem("usuario") != "turismo") {
+      this._router.navigateByUrl('/home');
+    }
     window.localStorage.setItem("url", "inserir-turismo");
   }
 

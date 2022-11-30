@@ -1,3 +1,6 @@
+<div style="height: 8%;">
+  <app-navbar></app-navbar>
+</div>
 <div
   class="d-flex flex-row justify-content-center align-items-center background"
   style="min-height: 92%"
@@ -12,6 +15,7 @@
           class="form-control emailEstilo"
           type="email"
           placeholder="email@example.com"
+          [(ngModel)]="usuario"
         />
       </div>
       <div class="mb-3">
@@ -20,10 +24,11 @@
           class="form-control senhaEstilo"
           type="password"
           placeholder="password"
+          [(ngModel)]="senha"
         />
       </div>
       <div class="w-100">
-        <a class="btn entrarEstilo w-100">Entrar</a>
+        <a class="btn entrarEstilo w-100" (click)="login()" >Entrar</a>
         <a routerLink="/" class="">Esqueci a senha</a>
       </div>
     </div>

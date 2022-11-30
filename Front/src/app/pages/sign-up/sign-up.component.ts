@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -9,9 +10,12 @@ export class SignUpComponent implements OnInit {
 
   tipoCadastro: string = "1";
 
-  constructor() { }
+  constructor(private _router: Router) { }
 
   ngOnInit(): void {
+    if(window.localStorage.getItem("usuario")) {
+      this._router.navigateByUrl('/home');
+    }
     window.localStorage.setItem("url", "sign-up");
   }
 

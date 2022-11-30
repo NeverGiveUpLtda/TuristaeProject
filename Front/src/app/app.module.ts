@@ -14,6 +14,7 @@ import { EditUserComponent } from './pages/edit-user/edit-user.component';
 import { ContentComponent } from './pages/content/content.component';
 import { FormsModule } from '@angular/forms';
 import { InserirTurismoComponent } from './pages/inserir-turismo/inserir-turismo.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { InserirTurismoComponent } from './pages/inserir-turismo/inserir-turismo
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule    
   ],
   providers: [],
   bootstrap: [AppComponent]

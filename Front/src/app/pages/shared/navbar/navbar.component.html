@@ -7,9 +7,13 @@
             </a>
           </li>
         </ul>
-        <div class="text-end me-3">
+        <div class="text-end me-3" *ngIf="!logado">
           <a routerLink="/sign-in" type="button" class="btn me-2 btn-entrar" >Entrar</a>
           <a routerLink="/sign-up" type="button" class="btn btn-CriarConta">Criar Conta</a>
+        </div>
+        <div class="text-end me-3" *ngIf="logado">
+          <a routerLink="/edit-user" class="btn me-2 btn-entrar" >Editar conta</a>
+          <button type="button" class="btn btn-CriarConta" (click)="logout()">Sair</button>
         </div>
       </div>
   </header>

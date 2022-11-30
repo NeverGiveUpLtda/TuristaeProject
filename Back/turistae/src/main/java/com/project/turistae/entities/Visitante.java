@@ -16,8 +16,7 @@ public class Visitante {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long ID_Visitante;
 	private String Nome;
-	private String email;
-	private String senha;
+	
 	@ManyToOne
 	@JoinColumn(name = "iD_Usuario")
 	private Usuario ID_Usuario;
@@ -25,15 +24,17 @@ public class Visitante {
 	public Visitante() {
 		
 	}
+	
 
-	public Visitante(Long iD_Visitante, String nome, String email, String senha, Usuario iD_Usuario) {
+	public Visitante(Long iD_Visitante, String nome, Usuario iD_Usuario) {
 		super();
 		ID_Visitante = iD_Visitante;
 		Nome = nome;
-		this.email = email;
-		this.senha = senha;
 		ID_Usuario = iD_Usuario;
 	}
+
+
+
 
 	public Long getID_Visitante() {
 		return ID_Visitante;
@@ -51,22 +52,6 @@ public class Visitante {
 		Nome = nome;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-
 	public Usuario getID_Usuario() {
 		return ID_Usuario;
 	}
@@ -74,5 +59,8 @@ public class Visitante {
 	public void setID_Usuario(Usuario iD_Usuario) {
 		ID_Usuario = iD_Usuario;
 	}
-
+	
+	
 }
+
+	

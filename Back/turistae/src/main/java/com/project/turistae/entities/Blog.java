@@ -19,6 +19,7 @@ public class Blog {
 	@ManyToOne
 	@JoinColumn(name = "iD_Visitante")
 	private Visitante ID_Visitante;
+	
 	@ManyToOne
 	@JoinColumn(name = "iD_Post")
 	private Conteudo ID_Post;

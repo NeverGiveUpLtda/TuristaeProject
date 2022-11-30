@@ -18,7 +18,6 @@ public class Conteudo {
 	private Long ID_Post;
 	private String descricao;
 	private String anexo;
-	private Date data;
 	
 	
 	public Conteudo() {
@@ -26,12 +25,11 @@ public class Conteudo {
 	}
 
 
-	public Conteudo(Long iD_Post, String descricao, String anexo, Date data) {
+	public Conteudo(Long iD_Post, String descricao, String anexo) {
 		super();
 		ID_Post = iD_Post;
 		this.descricao = descricao;
 		this.anexo = anexo;
-		this.data = data;
 	}
 
 
@@ -64,15 +62,6 @@ public class Conteudo {
 		this.anexo = anexo;
 	}
 
-
-	public Date getData() {
-		return data;
-	}
-
-
-	public void setData(Date data) {
-		this.data = data;
-	}
 	
 
 }

@@ -2,6 +2,7 @@ package com.project.turistae.entities;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,8 +16,14 @@ public class Conteudo {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
+	@Column
 	private Long ID_Post;
+	
+	@Column
 	private String descricao;
+	
+	@Column
 	private String anexo;
 	
 	

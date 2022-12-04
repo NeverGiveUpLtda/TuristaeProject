@@ -11,10 +11,10 @@ const routes: Routes = [
   { path: '', component: HomeComponent,
     children: [
       { path: 'home', component: ContentComponent },
-      { path: 'saiba-mais', component: SaibaMaisComponent }
+      { path: 'saiba-mais/:id', component: SaibaMaisComponent, pathMatch: 'full' }
     ]
   },
-  { path: '**', redirectTo: 'page-not-found' },
+  { path: '**', redirectTo: 'home' },
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'edit-user', component: EditUserComponent },

@@ -25,28 +25,32 @@ export class ContentComponent implements OnInit {
       this.separarTurismos();
       console.log("Lista de turismos: ", this.listaDeTurismos);
       this.listaDeListas.forEach((turismos4: any) => {
-        console.log(turismos4[0]);
+        console.log("Listas for each: ", turismos4);
       });
     });
   }
 
   separarTurismos(): void {
     let contador: number = 0;
+    let total: number = this.listaDeTurismos.length;
     let turismos4: any[] = [];
+
     this.listaDeTurismos.forEach((turismo: any) => {
       turismos4[contador] = turismo;
-      if(contador === 3) {
-        this.listaDeListas.push(turismos4);
-        turismos4 = [];
-        contador = 0;
-      } else
-        contador++;
-
-        if(this.listaDeTurismos.length < 4) {
+      if(total >= 4) {
+        if(contador === 3) {
+          contador = 0;
           this.listaDeListas.push(turismos4);
           turismos4 = [];
-          contador = 0;
-        }
+          total -= 4;
+        } else
+          contador++;
+      } else {
+        if(contador === total - 1) {
+          this.listaDeListas.push(turismos4);
+        } else
+          contador++;
+      }
     });
   }
 }

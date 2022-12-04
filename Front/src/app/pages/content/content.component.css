@@ -2,3 +2,25 @@
   background-color: #38B0FA;
   border-radius: 25px;
 }
+
+.div-principal {
+  height: 100%;
+  width: 100%;
+  padding-top: 30px;
+  background-color: #c9c9c9;
+}
+
+.carroceu {
+  margin-top: 15vh
+}
+
+.carroceu-item {
+  text-decoration: none; color: black
+}
+
+.carroceu-img {
+  object-fit: cover;
+  width: 30vh;
+  height: 30vh;
+  border: solid black 4px;
+}

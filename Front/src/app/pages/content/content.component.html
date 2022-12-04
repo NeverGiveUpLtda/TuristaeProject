@@ -1,170 +1,23 @@
-<div class="d-flex flex-column justify-content-start" style="
-    height: 100%;
-    width: 100%;
-    padding-top: 30px;
-    background-color: #c9c9c9;">
+<div class="d-flex flex-column justify-content-start div-principal">
   <ngb-carousel style="height: 5vh">
-    <ng-template ngbSlide>
-      <div class="d-flex flex-row justify-content-around" style="margin-top: 15vh">
-        <a routerLink="/saiba-mais" style="text-decoration: none; color: black">
-          <div class="d-flex flex-column">
-            <div style="width: 30vh">
-              <div class="">
-                <img src="../../../assets/img/casa de blues.jpg" alt="" style="
-                    object-fit: cover;
-                    width: 30vh;
-                    height: 30vh;
-                    border: solid black 4px;" />
-                <h3>Casa de Show The Blue Room</h3>
-                <p>
-                  Venha Assistir shows incríveis de jazz, MPB, samba e muito
-                  mais...
-                </p>
-
-                <a class="btn SaibaMais-background" routerLink="/saiba-mais">Saiba mais</a>
+    <ng-template ngbSlide *ngFor="let listaDeTurismos of listaDeListas">
+      <div class="d-flex flex-row justify-content-around carroceu">
+        <div *ngFor="let turismo of listaDeTurismos">
+          <a routerLink="/saiba-mais/{{turismo.id_Turismo}}" class="carroceu-item">
+            <div class="d-flex flex-column">
+              <div style="width: 30vh">
+                <div class="">
+                  <img src="{{turismo.iD_Conteudo.anexo}}" class="carroceu-img" alt="" />
+                  <h3>{{turismo.nomefantasia}}</h3>
+                  <p>
+                    {{turismo.iD_Conteudo.descricao.substr(0, 50)}}
+                  </p>
+                  <a class="btn SaibaMais-background" routerLink="/saiba-mais/{{turismo.id_Turismo}}">Saiba mais</a>
+                </div>
               </div>
             </div>
-          </div>
-        </a>
-        <a routerLink="/saiba-mais" style="text-decoration: none; color: black">
-          <div class="d-flex flex-column">
-            <div style="width: 30vh">
-              <div class="">
-                <img src="../../../assets/img/cafeteria.jpg" width="100%" height="100%" alt="" style="object-fit: cover; width: 30vh; height: 30vh; border: solid black 4px;" />
-                <h3>Donna Villa Café & Arte</h3>
-                <p>
-                  Venha experimentar o melhor café do estado ao lado de
-                  maravilhoras obras de arte e instalações...
-                </p>
-                <a class="btn SaibaMais-background" routerLink="/saiba-mais">Saiba mais</a>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a routerLink="/saiba-mais" style="text-decoration: none; color: black">
-          <div class="d-flex flex-column">
-            <div style="width: 30vh">
-              <div class="">
-                <img src="../../../assets/img/bistro.jpg" style="
-                    object-fit: cover;
-                    width: 30vh;
-                    height: 30vh;
-                    border: solid black 4px;" alt="" />
-                <h3>Peteka’s Bar & Bistrô</h3>
-                <p>
-                  Venha conhecer o Peteka’s e ganhe um drink surpresa cortesia
-                  em nosso happy hour...
-                </p>
-                <a class="btn SaibaMais-background" routerLink="/saiba-mais">Saiba mais</a>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a routerLink="/saiba-mais" style="text-decoration: none; color: black">
-          <div class="d-flex flex-column">
-            <div style="width: 30vh">
-              <div class="square-sm">
-                <img src="../../../assets/img/ufo.jpg" alt="" style="
-                    object-fit: cover;
-                    width: 30vh;
-                    height: 30vh;
-                    border: solid black 4px;
-                  " />
-                <h3>UFO Casa Noturna</h3>
-                <p>
-                  Considerada a melhor balada do estado, a UFO traz para você
-                  uma nova experiência na vida noturna...
-                </p>
-                <a class="btn SaibaMais-background" routerLink="/saiba-mais">Saiba mais</a>
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-    </ng-template>
-    <ng-template ngbSlide>
-      <div class="d-flex flex-row justify-content-around" style="margin-top: 15vh">
-        <a routerLink="/saiba-mais" style="text-decoration: none; color: black">
-          <div class="d-flex flex-column">
-            <div style="width: 30vh">
-              <div class="">
-                <img src="../../../assets/img/casa de blues.jpg" alt="" style="
-                    object-fit: cover;
-                    width: 30vh;
-                    height: 30vh;
-                    border: solid black 4px;
-                  " />
-                <h3>Casa de Show The Blue Room</h3>
-                <p>
-                  Venha Assistir shows incríveis de jazz, MPB, samba e muito
-                  mais...
-                </p>
-
-                <a class="btn SaibaMais-background" routerLink="/saiba-mais">Saiba mais</a>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a routerLink="/saiba-mais" style="text-decoration: none; color: black">
-          <div class="d-flex flex-column">
-            <div style="width: 30vh">
-              <div class="">
-                <img src="../../../assets/img/cafeteria.jpg" width="100%" height="100%" alt="" style="
-                    object-fit: cover;
-                    width: 30vh;
-                    height: 30vh;
-                    border: solid black 4px;
-                  " />
-                <h3>Donna Villa Café & Arte</h3>
-                <p>
-                  Venha experimentar o melhor café do estado ao lado de
-                  maravilhoras obras de arte e instalações...
-                </p>
-                <a class="btn SaibaMais-background" routerLink="/saiba-mais">Saiba mais</a>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a routerLink="/saiba-mais" style="text-decoration: none; color: black">
-          <div class="d-flex flex-column">
-            <div style="width: 30vh">
-              <div class="">
-                <img src="../../../assets/img/bistro.jpg" style="
-                    object-fit: cover;
-                    width: 30vh;
-                    height: 30vh;
-                    border: solid black 4px;
-                  " alt="" />
-                <h3>Peteka’s Bar & Bistrô</h3>
-                <p>
-                  Venha conhecer o Peteka’s e ganhe um drink surpresa cortesia
-                  em nosso happy hour...
-                </p>
-                <a class="btn SaibaMais-background" routerLink="/saiba-mais">Saiba mais</a>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a routerLink="/saiba-mais" style="text-decoration: none; color: black">
-          <div class="d-flex flex-column">
-            <div style="width: 30vh">
-              <div class="square-sm">
-                <img src="../../../assets/img/ufo.jpg" alt="" style="
-                    object-fit: cover;
-                    width: 30vh;
-                    height: 30vh;
-                    border: solid black 4px;
-                  " />
-                <h3>UFO Casa Noturna</h3>
-                <p>
-                  Considerada a melhor balada do estado, a UFO traz para você
-                  uma nova experiência na vida noturna...
-                </p>
-                <a class="btn SaibaMais-background" routerLink="/saiba-mais">Saiba mais</a>
-              </div>
-            </div>
-          </div>
-        </a>
+          </a>
+        </div>
       </div>
     </ng-template>
   </ngb-carousel>

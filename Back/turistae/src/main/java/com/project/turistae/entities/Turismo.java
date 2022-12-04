@@ -30,7 +30,7 @@ public class Turismo {
 	
 	@ManyToOne
 	@JoinColumn(name = "iD_Conteudo")
-	private Usuario iD_Conteudo;
+	private Conteudo iD_Conteudo;
 	
 	@ManyToOne
 	@JoinColumn(name = "iD_Usuario")
@@ -43,7 +43,7 @@ public class Turismo {
 	
 
 	public Turismo(Long iD_Turismo, String nomefantasia, String razaosocial, String bairro, String celular,
-			String numero, String logradouro, String cep, String uf, String cnpj, String cidade, Usuario iD_Conteudo,
+			String numero, String logradouro, String cep, String uf, String cnpj, String cidade, Conteudo iD_Conteudo,
 			Usuario iD_Usuario) {
 		super();
 		ID_Turismo = iD_Turismo;
@@ -63,13 +63,13 @@ public class Turismo {
 
 
 
-	public Usuario getiD_Conteudo() {
+	public Conteudo getiD_Conteudo() {
 		return iD_Conteudo;
 	}
 
 
 
-	public void setiD_Conteudo(Usuario iD_Conteudo) {
+	public void setiD_Conteudo(Conteudo iD_Conteudo) {
 		this.iD_Conteudo = iD_Conteudo;
 	}
 

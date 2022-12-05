@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map, Observable } from 'rxjs';
 import { project } from 'src/config/project';
 
 @Injectable({
@@ -24,5 +24,12 @@ export class TurismoService {
 
   excluirTurismo(id: number): Observable<any> {
     return this._http.delete(project.urlApi + 'turismo/' + id);
+  }
+
+  editarImagem(id: number, file: any): Observable<any> {
+
+    const formData = new FormData();
+    formData.set("file", file);
+    return this._http.put(project.urlApi + 'turismo/uploadImagem/' + id, formData);
   }
 }

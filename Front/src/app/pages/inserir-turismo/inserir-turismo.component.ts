@@ -14,9 +14,8 @@ export class InserirTurismoComponent implements OnInit {
   turismo: any = {};
   banner: File | null = null;
   id: any = "";
-  idConteudo: any = "";
 
-  constructor(private _router: Router, private _turismo: TurismoService, private _conteudo: ConteudoService) { }
+  constructor(private _router: Router, private _turismo: TurismoService) { }
 
   ngOnInit(): void {
     if(window.localStorage.getItem("permissao") === "visitante") {
@@ -30,13 +29,14 @@ export class InserirTurismoComponent implements OnInit {
   }
 
   cadastrar(): void {
-    let edit: any = {};
-    edit.descricao = this.turismo.iD_Conteudo.descricao;
-    edit.anexo = this.banner;
-    if(edit.anexo === null)
-      edit.anexo = "";
-    edit.id_Post = this.idConteudo;
-    this._conteudo.editarConteudo(edit).subscribe();
+    this.turismo.descricao = this.descricao;
+    if(this.banner === null || this.banner === undefined){
+      this._turismo.editarTurismo(this.turismo, this.id).subscribe();
+    } else {
+      this._turismo.editarTurismo(this.turismo, this.id).subscribe();
+      console.log(this.banner);
+      this._turismo.editarImagem(this.id, this.banner).subscribe();
+    }
   }
 
   // On file Select
@@ -54,8 +54,8 @@ export class InserirTurismoComponent implements OnInit {
     buscarDados(): void {
       this._turismo.buscarTurismoPorId(this.id).subscribe((data: any) => {
         this.turismo = data;
-        this.idConteudo = data.iD_Conteudo.id_Post;
-        this.descricao = data.iD_Conteudo.descricao;
+        this.descricao = data.descricao;
+        console.log(data);
       });
     }
 }

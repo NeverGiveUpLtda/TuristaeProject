@@ -84,7 +84,7 @@ public class TurismoController {
 					turismo = repository.getById(idTurismo);
 					
 					
-					if(turismo.getImagem() != "" || turismo.getImagem() != null) {
+					if(turismo.getImagem().length() > 0) {
 						Path caminhoAntigo = Paths.get(caminhoImagens+turismo.getImagem());
 						Files.delete(caminhoAntigo);
 					}

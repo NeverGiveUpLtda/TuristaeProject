@@ -7,10 +7,10 @@
             <div class="d-flex flex-column">
               <div style="width: 30vh">
                 <div class="">
-                  <img src="{{turismo.iD_Conteudo.anexo}}" class="carroceu-img" alt="" />
+                  <img src="http://localhost:8080/turismo/conteudo/MostraImagem/{{turismo.imagem}}" class="carroceu-img" alt="" />
                   <h3>{{turismo.nomefantasia}}</h3>
                   <p>
-                    {{turismo.iD_Conteudo.descricao.substr(0, 50)}}
+                    {{turismo.descricao.substr(0, 50)}}
                   </p>
                   <a class="btn SaibaMais-background" routerLink="/saiba-mais/{{turismo.id_Turismo}}">Saiba mais</a>
                 </div>

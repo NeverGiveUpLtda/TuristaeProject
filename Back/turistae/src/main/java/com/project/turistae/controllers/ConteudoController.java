@@ -29,7 +29,7 @@ import com.project.turistae.repositories.ConteudoRepository;
 @RequestMapping(value = "/conteudo")
 public class ConteudoController {
 
-	private static String caminhoImagens = "C:\\Users\\Lucas Spizzica\\Documents\\imagens";
+	private static String caminhoImagens = "C:\\Users\\LucasSpizzica\\Documents\\imagens";
 	
 	@Autowired
 	private ConteudoRepository repository;

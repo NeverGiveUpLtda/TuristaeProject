@@ -57,6 +57,12 @@ public class Turismo {
 	@Column
 	private String senha;
 	
+	@Column
+	private String imagem;
+	
+	@Column
+	private String descricao;
+	
 
 	@ManyToOne
 	@JoinColumn(name = "iD_Conteudo")
@@ -67,11 +73,11 @@ public class Turismo {
 
 	}
 
-	
 
+	
 	public Turismo(Long iD_Turismo, String nomefantasia, String razaosocial, String bairro, String celular,
 			String numero, String logradouro, String cep, String uf, String cnpj, String cidade, String permissao,
-			String email, String senha, Conteudo iD_Conteudo) {
+			String email, String senha, String imagem, String descricao, Conteudo iD_Conteudo) {
 		super();
 		ID_Turismo = iD_Turismo;
 		this.nomefantasia = nomefantasia;
@@ -87,10 +93,34 @@ public class Turismo {
 		this.permissao = permissao;
 		this.email = email;
 		this.senha = senha;
+		this.imagem = imagem;
+		this.descricao = descricao;
 		this.iD_Conteudo = iD_Conteudo;
 	}
-	
-	
+
+
+
+	public String getImagem() {
+		return imagem;
+	}
+
+
+
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
+	}
+
+
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
 
 
 

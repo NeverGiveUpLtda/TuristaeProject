@@ -18,6 +18,10 @@ export class TurismoService {
     return this._http.get(project.urlApi + 'turismo/' + id);
   }
 
+  cadastrarTurismo(obj: any): Observable<any> {
+    return this._http.post(project.urlApi + 'turismo/', obj);
+  }
+
   editarTurismo(obj: any, id: number): Observable<any> {
     return this._http.put(project.urlApi + 'turismo/' + id, obj);
   }

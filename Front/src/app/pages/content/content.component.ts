@@ -24,6 +24,7 @@ export class ContentComponent implements OnInit {
       this.listaDeTurismos = turismos;
       this.separarTurismos();
       this.listaDeListas.forEach((turismos4: any) => {
+        console.log(turismos4);
       });
     });
   }

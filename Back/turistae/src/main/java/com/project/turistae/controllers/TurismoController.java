@@ -49,18 +49,11 @@ public class TurismoController {
 	}
 
 	@PostMapping
-	public ResponseEntity<Boolean> insert(@RequestBody Turismo turismo, @RequestParam("file") MultipartFile arquivo) throws Exception {
+	public ResponseEntity<Boolean> insert(@RequestBody Turismo turismo) throws Exception {
 		try {
 			
-			if (!arquivo.isEmpty()) {
-				byte[] bytes = arquivo.getBytes();
-				Path caminho = Paths.get(caminhoImagens+arquivo.getOriginalFilename());
-				Files.write(caminho, bytes);
-			}
 			
-			turismo.setImagem(arquivo.getOriginalFilename());
-			
-			Turismo result = repository.saveAndFlush(turismo);
+			Turismo result = repository.save(turismo);
 			return ResponseEntity.ok().body(true);
 
 		} catch (Exception e) {

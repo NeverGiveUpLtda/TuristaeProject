@@ -42,14 +42,32 @@ export class SignUpComponent implements OnInit {
 
   cadastrar(): void {
     let usuario: any = {};
-    let rn: any = {};
+    console.log(this.tipoCadastro);
     if(this.tipoCadastro === "1") {
       usuario.permissao = "visitante";
       usuario.email = this.email;
       usuario.senha = this.senha;
       usuario.nome = this.nome;
+      this._visitante.editarVisitante(usuario).subscribe();
     } else {
-
+      usuario.permissao = "turismo";
+      usuario.nomefantasia = this.nomeFantasia;
+      usuario.razaosocial = this.razaoSocial;
+      usuario.bairro = this.bairro;
+      usuario.celular = this.telefone;
+      usuario.numero = this.numero;
+      usuario.logradouro = this.logradouro;
+      usuario.cep = this.cep;
+      usuario.uf = this.uf;
+      usuario.cnpj = this.cnpj;
+      usuario.cidade = this.cidade;
+      usuario.email = this.email2;
+      usuario.senha = this.senha2;
+      usuario.imagem = "";
+      usuario.descricao = "";
+      usuario.id_Turismo = "";
+      usuario.email = this.email2;
+      this._turismo.cadastrarTurismo(usuario).subscribe();
     }
   }
 

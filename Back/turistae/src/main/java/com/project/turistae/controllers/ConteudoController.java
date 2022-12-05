@@ -1,5 +1,7 @@
 package com.project.turistae.controllers;
 
+import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -56,7 +59,7 @@ public class ConteudoController {
 			
 			conteudo.setAnexo(arquivo.getOriginalFilename());
 			
-			Conteudo result = repository.save(conteudo);
+			Conteudo result = repository.saveAndFlush(conteudo);
 			return ResponseEntity.ok().body(true);
 
 		} catch (Exception e) {
@@ -97,5 +100,17 @@ public class ConteudoController {
 			throw new Exception("Erro editar Conteúdo do turismo. Causa do erro: " + e.getMessage());
 		}
 
+	}
+	
+	
+	// Retorna Imagem
+	@GetMapping("/turismo/conteudo/MostraImagem/{imagem}")
+	@ResponseBody
+	public byte[] retornaImagem(@PathVariable("imagem") String imagem) throws IOException {
+		File imagemArquivo = new File(caminhoImagens + imagem);
+		if (imagem != null || imagem.trim().length() > 0) {
+			return Files.readAllBytes(imagemArquivo.toPath());		
+		}
+		return null;
 	}
 }

@@ -22,7 +22,6 @@ export class NavbarComponent implements OnInit {
     }
 
     this.url = window.localStorage.getItem("url");
-    console.log(this.url);
     if(this.url === '/home' || this.url === '/saiba-mais')
       this.hideLogo = false;
   }

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -14,11 +15,10 @@ export class SignInComponent implements OnInit {
   senha: string = "";
 
   //  Listas do backend
-  visitantes: any;
-  turistas: any;
+  usuarios: any;
 
   //  injeção de dependência
-  constructor(private _http: HttpClient, private _router: Router) { }
+  constructor(private _users: UsuarioService, private _router: Router) { }
 
   ngOnInit(): void {
     if(window.localStorage.getItem("usuario")) {
@@ -26,22 +26,26 @@ export class SignInComponent implements OnInit {
     }
     window.localStorage.setItem("url", "sign-in");
 
-
     //  Set da lista de usuários
-    this._http.get("http://localhost:8080/users").subscribe((data: any) => {
-      this.turistas = data;
-      console.log(this.turistas);
-    });
+    this.buscarUsuarios();
   }
 
   login(): void {
-    this.turistas.forEach((visitante: any) => {
-      if(this.usuario === visitante.email && this.senha === visitante.senha) {
-        window.localStorage.setItem("usuario", visitante.email);
-        window.localStorage.setItem("permissao", visitante.permissao);
-        window.localStorage.setItem("id", visitante.id_usuario)
+    this.usuarios.forEach((usuario: any) => {
+      if(this.usuario === usuario.email && this.senha === usuario.senha) {
+        window.localStorage.setItem("usuario", usuario.email);
+        window.localStorage.setItem("permissao", usuario.permissao);
+        window.localStorage.setItem("id", usuario.id_Usuario)
         this._router.navigateByUrl('/home');
+        console.log(usuario);
       }
+    });
+    console.log(this.usuarios);
+  }
+
+  buscarUsuarios(): void {
+    this._users.buscarUsuarios().subscribe((data: any) => {
+      this.usuarios = data;
     });
   }
 }

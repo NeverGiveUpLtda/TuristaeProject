@@ -14,7 +14,6 @@ const routes: Routes = [
       { path: 'saiba-mais/:id', component: SaibaMaisComponent, pathMatch: 'full' }
     ]
   },
-  { path: '**', redirectTo: 'home' },
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'edit-user', component: EditUserComponent },

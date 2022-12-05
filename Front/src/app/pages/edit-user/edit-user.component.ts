@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
   selector: 'app-edit-user',
@@ -8,9 +9,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class EditUserComponent implements OnInit {
 
-  usuarioId: string = "";
+  id: any = "";
+  usuario: any = {};
 
-  constructor(private _router: Router, private _route: ActivatedRoute) { }
+  email: string = "";
+  senha: string = "";
+
+  constructor(private _router: Router, private _route: ActivatedRoute, private _usuario: UsuarioService) { }
 
   ngOnInit(): void {
     if(window.localStorage.getItem("permissao") === "turismo") {
@@ -19,14 +24,29 @@ export class EditUserComponent implements OnInit {
       this._router.navigateByUrl('/home');
     }
     window.localStorage.setItem("url", "edit-user");
-    this.usuarioId = "" + window.localStorage.getItem("id");
+    this.id = window.localStorage.getItem("id");
+    this.buscarDados();
   }
 
   trocarDados(): void {
+    let edit: any = {};
+    edit = this.usuario;
+    edit.email = this.email;
+    edit.senha = this.senha;
 
+    this._usuario.editarUsuario(edit).subscribe();
   }
 
   excluirUsuario(): void {
+    this._usuario.excluirUsuario(this.id);
+  }
 
+  // trazer informações
+  buscarDados(): void {
+    this._usuario.buscarUsuarioPorId(this.id).subscribe((data: any) => {
+      this.usuario = data;
+      this.email = this.usuario.email;
+      this.senha = this.usuario.senha;
+    });
   }
 }

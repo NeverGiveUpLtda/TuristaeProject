@@ -18,8 +18,8 @@ export class VisitanteService {
     return this._http.get(project.urlApi + 'visitantes/' + id);
   }
 
-  editarVisitante(obj: any, id: number): Observable<any> {
-    return this._http.put(project.urlApi + 'visitantes/' + id, obj);
+  editarVisitante(obj: any): Observable<any> {
+    return this._http.post(project.urlApi + 'visitantes/', obj);
   }
 
   excluirVisitante(id: number): Observable<any> {

@@ -23,9 +23,7 @@ export class ContentComponent implements OnInit {
     this._turismo.buscarTurismos().subscribe((turismos: any) => {
       this.listaDeTurismos = turismos;
       this.separarTurismos();
-      console.log("Lista de turismos: ", this.listaDeTurismos);
       this.listaDeListas.forEach((turismos4: any) => {
-        console.log("Listas for each: ", turismos4);
       });
     });
   }

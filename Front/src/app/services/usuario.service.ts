@@ -18,8 +18,8 @@ export class UsuarioService {
     return this._http.get(project.urlApi + 'users/' + id);
   }
 
-  editarUsuario(obj: any, id: number): Observable<any> {
-    return this._http.put(project.urlApi + 'users/' + id, obj);
+  editarUsuario(obj: any): Observable<any> {
+    return this._http.post(project.urlApi + 'users/', obj);
   }
 
   excluirUsuario(id: number): Observable<any> {

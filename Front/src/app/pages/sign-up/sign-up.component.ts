@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UsuarioService } from '../../services/usuario.service';
 import { VisitanteService } from '../../services/visitante.service';
 import { TurismoService } from '../../services/turismo.service';
 import { ConteudoService } from '../../services/conteudo.service';
@@ -32,7 +31,7 @@ export class SignUpComponent implements OnInit {
   cidade: string = "";
   uf: string = "";
 
-  constructor(private _router: Router, private _users: UsuarioService, private _visitante: VisitanteService, private _turismo: TurismoService, private _conteudo: ConteudoService) { }
+  constructor(private _router: Router, private _visitante: VisitanteService, private _turismo: TurismoService, private _conteudo: ConteudoService) { }
 
   ngOnInit(): void {
     if(window.localStorage.getItem("usuario")) {
@@ -49,9 +48,6 @@ export class SignUpComponent implements OnInit {
       usuario.email = this.email;
       usuario.senha = this.senha;
       usuario.nome = this.nome;
-      this._users.editarUsuario(usuario).subscribe((data) => {
-        console.log(data);
-      });
     } else {
 
     }

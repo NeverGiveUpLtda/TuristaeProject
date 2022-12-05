@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UsuarioService } from 'src/app/services/usuario.service';
+import { TurismoService } from '../../services/turismo.service';
+import { VisitanteService } from '../../services/visitante.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -15,10 +16,11 @@ export class SignInComponent implements OnInit {
   senha: string = "";
 
   //  Listas do backend
-  usuarios: any;
+  turismos: any;
+  visitantes: any;
 
   //  injeção de dependência
-  constructor(private _users: UsuarioService, private _router: Router) { }
+  constructor(private _turismo: TurismoService, private _visitante: VisitanteService, private _router: Router) { }
 
   ngOnInit(): void {
     if(window.localStorage.getItem("usuario")) {
@@ -30,22 +32,48 @@ export class SignInComponent implements OnInit {
     this.buscarUsuarios();
   }
 
+  //login(): void {
+    //this.turismos.forEach((turismo: any) => {
+      //if(this.usuario === turismo.email && this.senha === turismo.senha) {
+        //window.localStorage.setItem("usuario", turismo.email);
+        //window.localStorage.setItem("permissao", turismo.permissao);
+        //window.localStorage.setItem("id", turismo.id_Usuario)
+        //this._router.navigateByUrl('/home');
+        //console.log(usuario);
+      //}
+    //});
+    //console.log(this.turismos);
+  //}
+
   login(): void {
-    this.usuarios.forEach((usuario: any) => {
-      if(this.usuario === usuario.email && this.senha === usuario.senha) {
-        window.localStorage.setItem("usuario", usuario.email);
-        window.localStorage.setItem("permissao", usuario.permissao);
-        window.localStorage.setItem("id", usuario.id_Usuario)
+    this.visitantes.forEach((visitante: any) => {
+      if(this.usuario === visitante.email && this.senha === visitante.senha) {
+        window.localStorage.setItem("usuario", visitante.email);
+        window.localStorage.setItem("permissao", visitante.permissao);
+        window.localStorage.setItem("id", visitante.id_Turismo);
         this._router.navigateByUrl('/home');
-        console.log(usuario);
       }
     });
-    console.log(this.usuarios);
+
+    this.turismos.forEach((turismo: any) => {
+      if(this.usuario === turismo.email && this.senha === turismo.senha) {
+        window.localStorage.setItem("usuario", turismo.email);
+        window.localStorage.setItem("permissao", turismo.permissao);
+        window.localStorage.setItem("id", turismo.id_Turismo);
+        this._router.navigateByUrl('/home');
+      }
+    });
   }
 
   buscarUsuarios(): void {
-    this._users.buscarUsuarios().subscribe((data: any) => {
-      this.usuarios = data;
+    this._turismo.buscarTurismos().subscribe((data: any) => {
+      this.turismos = data;
+      console.log("Turismos: ", data);
+    });
+
+    this._visitante.buscarVisitantes().subscribe((data: any) => {
+      this.visitantes = data;
+      console.log("Visitantes: ", data);
     });
   }
 }

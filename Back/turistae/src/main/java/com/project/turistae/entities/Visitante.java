@@ -1,4 +1,6 @@
 package com.project.turistae.entities;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,28 +13,74 @@ import javax.persistence.Table;
 @Table(name = "tb_visitantes")
 
 public class Visitante {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long ID_Visitante;
+	
+	@Column
 	private String Nome;
-	
-	@ManyToOne
-	@JoinColumn(name = "iD_Usuario")
-	private Usuario ID_Usuario;
-	
+
+	@Column
+	private String permissao;
+
+	@Column(unique = true)
+	private String email;
+
+	@Column
+	private String senha;
+
+
 	public Visitante() {
-		
+
 	}
+
 	
 
-	public Visitante(Long iD_Visitante, String nome, Usuario iD_Usuario) {
+	public Visitante(Long iD_Visitante, String nome, String permissao, String email, String senha) {
 		super();
 		ID_Visitante = iD_Visitante;
 		Nome = nome;
-		ID_Usuario = iD_Usuario;
+		this.permissao = permissao;
+		this.email = email;
+		this.senha = senha;
 	}
 
+
+
+	public String getPermissao() {
+		return permissao;
+	}
+
+
+
+	public void setPermissao(String permissao) {
+		this.permissao = permissao;
+	}
+
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+
+	public String getSenha() {
+		return senha;
+	}
+
+
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 
 
 
@@ -52,15 +100,5 @@ public class Visitante {
 		Nome = nome;
 	}
 
-	public Usuario getID_Usuario() {
-		return ID_Usuario;
-	}
 
-	public void setID_Usuario(Usuario iD_Usuario) {
-		ID_Usuario = iD_Usuario;
-	}
-	
-	
 }
-
-	

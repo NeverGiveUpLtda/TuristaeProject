@@ -8,10 +8,12 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.project.turistae.entities.Blog;
 import com.project.turistae.entities.Turismo;
 import com.project.turistae.entities.Turismo;
 import com.project.turistae.repositories.TurismoRepository;
@@ -69,4 +71,24 @@ public class TurismoController {
 				throw new Exception("Erro deletar. Causa do erro: " + e.getMessage());
 			}
 		}
+		
+		// Alterar por ID
+		@PutMapping("/{idTurismo}")
+		public ResponseEntity<Boolean> alterar(@PathVariable Long idTurismo, @RequestBody Turismo tursimo)
+				throws Exception {
+
+			try {
+				if (repository.findById(idTurismo).isEmpty()) {
+					return ResponseEntity.ok().body(false);
+				} else {
+					repository.save(tursimo);
+					return ResponseEntity.ok().body(true);
+				}
+			} catch (Exception e) {
+				throw new Exception("Erro ao editar tursimo. Causa do erro: " + e.getMessage());
+			}
+
+		}
+		
+		
 }

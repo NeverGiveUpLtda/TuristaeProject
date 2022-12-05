@@ -22,73 +22,69 @@ import com.project.turistae.repositories.TurismoRepository;
 @RequestMapping(value = "/turismo")
 public class TurismoController {
 
-
+	
+	
 	@Autowired
 	private TurismoRepository repository;
 
 	@GetMapping
 	public ResponseEntity<List<Turismo>> findAll() {
-	    List<Turismo> result = repository.findAll();
-	    
-	    return ResponseEntity.ok(result);
+		List<Turismo> result = repository.findAll();
+
+		return ResponseEntity.ok(result);
 	}
-	
-	
+
 	@GetMapping("/{idTurismo}")
 	public ResponseEntity<Turismo> findById(@PathVariable Long idTurismo) {
 		Turismo turismo = repository.findById(idTurismo).get();
-		return ResponseEntity.ok().body(turismo);	
+		return ResponseEntity.ok().body(turismo);
 	}
-	
+
 	@PostMapping
-	public ResponseEntity<Boolean> insert(@RequestBody Turismo turismo) throws Exception{
+	public ResponseEntity<Boolean> insert(@RequestBody Turismo turismo) throws Exception {
 		try {
-			
+
 			Turismo result = repository.save(turismo);
 			return ResponseEntity.ok().body(true);
-			
+
 		} catch (Exception e) {
 			throw new Exception("Erro cadastrar Turismo. Causa do erro: " + e.getMessage());
 		}
-		
 
-	}	
-	
-	
-	//Deletar por ID
-		@DeleteMapping("/{idTurismo}")
-		public ResponseEntity<Boolean> removerPermissao(@PathVariable Long idTurismo) throws Throwable{
-			
-			try {
-				if(repository.findById(idTurismo).isEmpty()){
-					return ResponseEntity.ok().body(false);
-				}
-				else {
-					repository.deleteById(idTurismo);
-					return ResponseEntity.ok().body(true);
-				}
-			} catch (Exception e) {
-				throw new Exception("Erro deletar. Causa do erro: " + e.getMessage());
+	}
+
+	// Deletar por ID
+	@DeleteMapping("/{idTurismo}")
+	public ResponseEntity<Boolean> removerPermissao(@PathVariable Long idTurismo) throws Throwable {
+
+		try {
+			if (repository.findById(idTurismo).isEmpty()) {
+				return ResponseEntity.ok().body(false);
+			} else {
+				repository.deleteById(idTurismo);
+				return ResponseEntity.ok().body(true);
 			}
+		} catch (Exception e) {
+			throw new Exception("Erro deletar. Causa do erro: " + e.getMessage());
 		}
-		
-		// Alterar por ID
-		@PutMapping("/{idTurismo}")
-		public ResponseEntity<Boolean> alterar(@PathVariable Long idTurismo, @RequestBody Turismo tursimo)
-				throws Exception {
+	}
 
-			try {
-				if (repository.findById(idTurismo).isEmpty()) {
-					return ResponseEntity.ok().body(false);
-				} else {
-					repository.save(tursimo);
-					return ResponseEntity.ok().body(true);
-				}
-			} catch (Exception e) {
-				throw new Exception("Erro ao editar tursimo. Causa do erro: " + e.getMessage());
+	// Alterar por ID
+	@PutMapping("/{idTurismo}")
+	public ResponseEntity<Boolean> alterar(@PathVariable Long idTurismo, @RequestBody Turismo tursimo)
+			throws Exception {
+
+		try {
+			if (repository.findById(idTurismo).isEmpty()) {
+				return ResponseEntity.ok().body(false);
+			} else {
+				repository.save(tursimo);
+				return ResponseEntity.ok().body(true);
 			}
-
+		} catch (Exception e) {
+			throw new Exception("Erro ao editar tursimo. Causa do erro: " + e.getMessage());
 		}
-		
-		
+
+	}
+
 }

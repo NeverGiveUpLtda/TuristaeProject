@@ -31,12 +31,14 @@ export class InserirTurismoComponent implements OnInit {
   cadastrar(): void {
     this.turismo.descricao = this.descricao;
     if(this.banner === null || this.banner === undefined){
-      this._turismo.editarTurismo(this.turismo, this.id).subscribe();
-      this._router.navigateByUrl('/home');
+      this._turismo.editarTurismo(this.turismo, this.id).subscribe(() => {
+        this._router.navigateByUrl('/home');
+      });
     } else {
       this._turismo.editarTurismo(this.turismo, this.id).subscribe();
-      this._turismo.editarImagem(this.id, this.banner).subscribe();
-      this._router.navigateByUrl('/home');
+      this._turismo.editarImagem(this.id, this.banner).subscribe(() => {
+        this._router.navigateByUrl('/home');
+      });
     }
   }
 

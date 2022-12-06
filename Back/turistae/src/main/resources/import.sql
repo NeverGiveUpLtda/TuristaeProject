@@ -3,7 +3,7 @@
 -- INSERT INTO tb_usuarios(permissao, email, senha) VALUES ('turismo', 'turismo@teste.com.br' '123456789');
 
 -- BASE DE USUÁRIOS
-INSERT INTO tb_visitantes(nome, email, senha, permissao) VALUES ('Ettore Rollo','vini@gmail.com','123456789','visitante');
+INSERT INTO tb_visitantes(nome, email, senha, permissao) VALUES ('Ettore Rollo','ettorerollo@gmail.com','123456789','visitante');
 INSERT INTO tb_visitantes(nome, email, senha, permissao) VALUES ('Rafaela Estefogo','rafaela@gmail.com','123456789','visitante');
 INSERT INTO tb_visitantes(nome, email, senha, permissao) VALUES ('Vitor Borges','vitor@gmail.com','123456789','visitante');
 INSERT INTO tb_visitantes(nome, email, senha, permissao) VALUES ('Vinicius Borges','vinicius@gmail.com','123456789','visitante');
@@ -31,9 +31,3 @@ INSERT INTO tb_turismo(nomefantasia,razaosocial,bairro,celular,numero,logradouro
 
 ALTER TABLE tb_blog ADD FOREIGN KEY (id_post) REFERENCES tb_conteudo(id_post);
 ALTER TABLE tb_blog ADD FOREIGN KEY (id_visitante) REFERENCES tb_conteudo(id_visitante);
-ALTER TABLE tb_visitantes ADD FOREIGN KEY (id_usuario) REFERENCES tb_conteudo(id_usuario);
-ALTER TABLE tb_turismo ADD FOREIGN KEY (id_usuario) REFERENCES tb_conteudo(id_usuario);
-
-
-
-

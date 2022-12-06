@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { VisitanteService } from '../../services/visitante.service';
 
 @Component({
   selector: 'app-edit-user',
@@ -14,7 +15,7 @@ export class EditUserComponent implements OnInit {
   email: string = "";
   senha: string = "";
 
-  constructor(private _router: Router, private _route: ActivatedRoute) { }
+  constructor(private _router: Router, private _route: ActivatedRoute, private _usuario: VisitanteService) { }
 
   ngOnInit(): void {
     if(window.localStorage.getItem("permissao") === "turismo") {
@@ -33,6 +34,8 @@ export class EditUserComponent implements OnInit {
     edit.email = this.email;
     edit.senha = this.senha;
 
+    this._usuario.editarVisitante(edit).subscribe();
+
   }
 
   excluirUsuario(): void {
@@ -40,10 +43,10 @@ export class EditUserComponent implements OnInit {
 
   // trazer informações
   buscarDados(): void {
-//    this._usuario.buscarUsuarioPorId(this.id).subscribe((data: any) => {
-  //    this.usuario = data;
-    //  this.email = this.usuario.email;
-      //this.senha = this.usuario.senha;
-    //});
+    this._usuario.buscarVisitantePorId(this.id).subscribe((data: any) => {
+      this.usuario = data;
+      this.email = this.usuario.email;
+      this.senha = this.usuario.senha;
+    });
   }
 }

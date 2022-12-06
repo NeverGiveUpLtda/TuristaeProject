@@ -42,13 +42,13 @@ export class SignUpComponent implements OnInit {
 
   cadastrar(): void {
     let usuario: any = {};
-    console.log(this.tipoCadastro);
     if(this.tipoCadastro === "1") {
       usuario.permissao = "visitante";
       usuario.email = this.email;
       usuario.senha = this.senha;
       usuario.nome = this.nome;
       this._visitante.editarVisitante(usuario).subscribe();
+      this._router.navigateByUrl('/home');
     } else {
       usuario.permissao = "turismo";
       usuario.nomefantasia = this.nomeFantasia;
@@ -68,6 +68,7 @@ export class SignUpComponent implements OnInit {
       usuario.id_Turismo = "";
       usuario.email = this.email2;
       this._turismo.cadastrarTurismo(usuario).subscribe();
+      this._router.navigateByUrl('/sing-in');
     }
   }
 

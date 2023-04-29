@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstraintLayuot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/azul_marinho"
+    android:onClick="saibaMaisButton">
+
+
+    <TextView
+        android:id="@+id/nomeLocalTxt"
+        android:layout_width="242dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#EBEBEB"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/descricaoTxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/fotoImg"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/fotoImg"
+        android:layout_width="150dp"
+        android:layout_height="202dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@mipmap/jdbotanico" />
+
+    <TextView
+        android:id="@+id/descricaoTxt"
+        android:layout_width="237dp"
+        android:layout_height="122dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="9dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#EBEBEB"
+        android:textIsSelectable="false"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/saibaMaisBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/fotoImg"
+        app:layout_constraintTop_toBottomOf="@+id/nomeLocalTxt"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/saibaMaisBtn"
+        android:layout_width="123dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="163dp"
+        android:layout_marginEnd="50dp"
+        android:background="@color/maya_blue"
+        android:text="Saiba mais"
+        android:textColor="#141414"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fotoImg"
+        app:layout_constraintTop_toTopOf="@+id/nomeLocalTxt" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

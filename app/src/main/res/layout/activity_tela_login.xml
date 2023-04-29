@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/azul_marinho"
+    tools:context=".model.TelaLogin">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="213dp"
+        android:layout_height="205dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/logo_turistae" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="371dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="44dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+        <TextView
+            android:id="@+id/usuarioTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:fontFamily="sans-serif-medium"
+            android:text="Usuário:"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/usuarioEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:ems="10"
+            android:hint="Informe o usuário"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:textColor="#DFFFFDFD"
+            android:textColorHint="#515F6A" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="372dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="3"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <TextView
+            android:id="@+id/senhaTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:fontFamily="sans-serif-medium"
+            android:text="Senha:"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/senhaEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:ems="10"
+            android:hint="Informe a senha"
+            android:inputType="text"
+            android:password="true"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#515F6A" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/entrarBtn"
+        android:layout_width="108dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="52dp"
+        android:background="@color/maya_blue"
+        android:backgroundTint="@color/maya_blue"
+        android:text="Entrar"
+        android:textColor="#020C20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+    <Button
+        android:id="@+id/criarContaBtn"
+        android:layout_width="149dp"
+        android:layout_height="54dp"
+        android:background="@color/maya_blue"
+        android:text="Criar conta"
+        android:textColor="#020C20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avisoContaTxt"
+        app:layout_constraintVertical_bias="0.121" />
+
+    <TextView
+        android:id="@+id/avisoContaTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:fontFamily="sans-serif"
+        android:text="Ainda não tem uma conta?"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/entrarBtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,9 +1,9 @@
-package com.example.aula5.model;
+package com.app.turistae.model;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import com.example.aula5.R;
+import com.app.turistae.R;
 
 public class ListaLocais extends AppCompatActivity {
 

@@ -1,11 +1,11 @@
-package com.example.aula5.adapter;
+package com.app.turistae.adapter;
 
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.example.aula5.R;
+import com.app.turistae.R;
 
 public class GuiaHolder extends RecyclerView.ViewHolder {
     private ImageView fotoImg;

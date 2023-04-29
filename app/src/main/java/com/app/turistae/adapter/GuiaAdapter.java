@@ -1,4 +1,4 @@
-package com.example.aula5.adapter;
+package com.app.turistae.adapter;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -6,9 +6,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.aula5.R;
-import com.example.aula5.dataset.GuiaDataset;
-import com.example.aula5.Locais;
+import com.app.turistae.R;
+import com.app.turistae.dataset.GuiaDataset;
+import com.app.turistae.Locais;
 
 import java.util.List;
 

@@ -1,8 +1,8 @@
-package com.example.aula5.dataset;
+package com.app.turistae.dataset;
 
-import com.example.aula5.Locais;
-import com.example.aula5.R;
-import com.example.aula5.Locais;
+import com.app.turistae.Locais;
+import com.app.turistae.R;
+
 import java.util.ArrayList;
 import java.util.List;
 

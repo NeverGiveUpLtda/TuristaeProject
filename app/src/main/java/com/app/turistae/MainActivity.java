@@ -1,4 +1,4 @@
-package com.example.aula5;
+package com.app.turistae;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -6,8 +6,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.View;
-import com.example.aula5.adapter.GuiaAdapter;
-import com.example.aula5.dataset.GuiaDataset;
+import com.app.turistae.adapter.GuiaAdapter;
+import com.app.turistae.dataset.GuiaDataset;
 
 public class MainActivity extends AppCompatActivity {
 

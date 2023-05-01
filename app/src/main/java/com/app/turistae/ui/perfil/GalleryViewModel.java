@@ -1,4 +1,4 @@
-package com.app.turistae.ui.gallery;
+package com.app.turistae.ui.perfil;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

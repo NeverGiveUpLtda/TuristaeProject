@@ -1,4 +1,4 @@
-package com.app.turistae;
+package com.app.turistae.model;
 
 public class Locais {
 
@@ -37,5 +37,17 @@ public class Locais {
 
     public void setFotoLocal(int fotoLocal) {
         this.fotoLocal = fotoLocal;
+    }
+
+ /* public String getSaibamais() {
+        return saibamais;
+    }
+
+    public void setSaibamais(String saibamais) {
+        this.saibamais = saibamais;
+    }
+    */
+
+    public void get(int position) {
     }
 }

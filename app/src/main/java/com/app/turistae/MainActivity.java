@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import com.app.turistae.adapter.GuiaAdapter;
 import com.app.turistae.dataset.GuiaDataset;
+import com.app.turistae.model.Locais;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,8 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lista_locais);
         setupRecycler();
     }
-
-    public void setupRecycler() {
+    public void setupRecycler(){
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager((getApplicationContext()));
         recyclerGuia = findViewById(R.id.recyclerGuiaTuristico);
         recyclerGuia.setLayoutManager(layoutManager);
@@ -30,12 +30,14 @@ public class MainActivity extends AppCompatActivity {
         // setando o adapter
         guiaAdapter = new GuiaAdapter(GuiaDataset.getLista());
         recyclerGuia.setAdapter(guiaAdapter);
-        recyclerGuia.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+
+        recyclerGuia.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
     }
 
     // o que ta acontecendo aqui?
-    public void addLocalClick(View view) {
+    public void addLocalClick(View view){
         //COMO ADICIONAR O BOTAO E A FOTO??
         guiaAdapter.adicionarItem(new Locais("Local 1", "É um local", 1));
     }
+
 }

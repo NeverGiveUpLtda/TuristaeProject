@@ -1,8 +1,7 @@
 package com.app.turistae.dataset;
 
-import com.app.turistae.Locais;
 import com.app.turistae.R;
-
+import com.app.turistae.model.Locais;
 import java.util.ArrayList;
 import java.util.List;
 

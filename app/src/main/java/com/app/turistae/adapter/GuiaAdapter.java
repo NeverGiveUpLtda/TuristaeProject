@@ -5,11 +5,9 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.app.turistae.R;
 import com.app.turistae.dataset.GuiaDataset;
-import com.app.turistae.Locais;
-
+import com.app.turistae.model.Locais;
 import java.util.List;
 
 public class GuiaAdapter extends RecyclerView.Adapter<GuiaHolder> {

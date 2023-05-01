@@ -18,7 +18,7 @@
             android:name=".LoginTest"
             android:exported="false" />
         <activity
-            android:name=".TelaCadastro"
+            android:name=".TelaCadastroTurismo"
             android:exported="false" />
         <activity
             android:name=".TelaDetalhes"

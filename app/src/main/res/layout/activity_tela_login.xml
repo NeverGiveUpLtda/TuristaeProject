@@ -103,18 +103,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
-    <Button
-        android:id="@+id/btnCriarConta"
-        android:layout_width="149dp"
-        android:layout_height="54dp"
-        android:text="Criar conta"
-        android:textColor="#020C20"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/avisoContaTxt"
-        app:layout_constraintVertical_bias="0.121" />
-
     <TextView
         android:id="@+id/avisoContaTxt"
         android:layout_width="wrap_content"
@@ -129,5 +117,27 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnEntrar" />
+
+    <TextView
+        android:id="@+id/txtCadastrarTurismo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="55dp"
+        android:text="Cadastrar turismo"
+        android:textColor="@color/branco"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avisoContaTxt" />
+
+    <TextView
+        android:id="@+id/txtCadastrarUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="60dp"
+        android:text="Cadastrar usuário"
+        android:textColor="@color/branco"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avisoContaTxt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

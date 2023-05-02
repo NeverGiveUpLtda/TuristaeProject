@@ -6,39 +6,133 @@
     android:layout_height="match_parent"
     android:background="@color/azul_marinho">
 
-
     <EditText
-        android:id="@+id/txtCnpj"
+        android:id="@+id/txtLogin"
         android:layout_width="0dp"
         android:layout_height="35dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="70dp"
         android:layout_marginEnd="50dp"
         android:background="@color/branco"
         android:ems="10"
-        android:inputType="number"
-        android:hint="CNPJ"
+        android:hint="Login"
         android:textAlignment="center"
+        android:inputType="textPersonName"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtConfirmarSenha" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtTelefone"
+        android:id="@+id/txtCidade"
         android:layout_width="0dp"
         android:layout_height="35dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
         android:background="#FFFFFF"
-        android:hint="Telefone contato"
+        android:inputType="textPostalAddress"
+        android:hint="Cidade"
         android:textAlignment="center"
-        android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEstado" />
+
+    <TextView
+        android:id="@+id/txtBairro"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        android:background="#FFFFFF"
+        android:hint="Bairro"
+        android:inputType="textPostalAddress"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCidade" />
+
+    <TextView
+        android:id="@+id/txtRua"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        android:background="#FFFFFF"
+        android:hint="Rua"
+        android:inputType="textPostalAddress"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBairro" />
+
+    <TextView
+        android:id="@+id/txtLogradouro"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="50dp"
+        android:background="#FFFFFF"
+        android:hint="Logradouro"
+        android:inputType="textPostalAddress"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBairro" />
+
+    <TextView
+        android:id="@+id/txtNascimento"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        android:background="#FFFFFF"
+        android:inputType="date"
+        android:hint="Data de Nascimento"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtLogradouro" />
+
+    <TextView
+        android:id="@+id/txtSenha"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="50dp"
+        android:background="#FFFFFF"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLogin" />
+
+    <TextView
+        android:id="@+id/txtSenhaConfirma"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        android:background="#FFFFFF"
+        android:hint="Confirmar Senha"
+        android:textAlignment="center"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSenha" />
 
     <TextView
         android:id="@+id/txtNome"
@@ -53,177 +147,90 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCnpj" />
+        app:layout_constraintTop_toBottomOf="@+id/txtSenhaConfirma" />
 
     <TextView
-        android:id="@+id/txtRua"
+        android:id="@+id/txtEmail"
         android:layout_width="0dp"
         android:layout_height="35dp"
-        android:textAlignment="center"
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
         android:background="#FFFFFF"
-        android:hint="Rua"
-        android:inputType="textPersonName"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNome" />
 
     <TextView
-        android:id="@+id/txtBairro"
+        android:id="@+id/txtTelefone"
         android:layout_width="0dp"
         android:layout_height="35dp"
-        android:textAlignment="center"
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
         android:background="#FFFFFF"
-        android:hint="Bairro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtRua" />
-
-    <TextView
-        android:id="@+id/txtCidade"
-        android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:hint="Telefone"
         android:textAlignment="center"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="50dp"
-        android:background="#FFFFFF"
-        android:hint="Cidade"
-        android:inputType="textPersonName"
+        android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtBairro" />
+        app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
 
     <TextView
         android:id="@+id/txtEstado"
         android:layout_width="0dp"
-        android:textAlignment="center"
         android:layout_height="35dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
         android:background="#FFFFFF"
         android:hint="Estado"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCidade" />
-
-    <TextView
-        android:id="@+id/txtLogradouro"
-        android:layout_width="0dp"
-        android:textAlignment="center"
-        android:layout_height="35dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="50dp"
-        android:background="#FFFFFF"
-        android:hint="Logradouro"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEstado" />
-
-    <TextView
-        android:id="@+id/txtDescricao"
-        android:layout_width="307dp"
-        android:layout_height="118dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="50dp"
-        android:background="#FFFFFF"
-        android:hint="Descrição"
-        android:inputType="textPersonName"
+        android:inputType="textPostalAddress"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTelefone" />
 
-    <TextView
-        android:id="@+id/txtLogin"
-        android:layout_width="0dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"
+    <Button
+        android:id="@+id/btnCadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="69dp"
         android:layout_marginEnd="50dp"
-        android:background="@color/branco"
-        android:hint="Login"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
+        android:layout_marginBottom="50dp"
+        android:text="Cadastrar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/btnCancelar"
+        app:layout_constraintTop_toBottomOf="@+id/txtNascimento" />
 
-    <TextView
-        android:id="@+id/txtSenha"
-        android:layout_width="0dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="50dp"
-        android:background="@color/branco"
-        android:hint="Senha"
-        android:inputType="textPassword"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtLogin" />
-
-    <TextView
-        android:id="@+id/txtConfirmarSenha"
-        android:layout_width="0dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="50dp"
-        android:background="@color/branco"
-        android:hint="Confirmar senha"
-        android:inputType="textPassword"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtSenha" />
-
-    <TextView
-        android:id="@+id/txtCdastroTurismo"
+    <Button
+        android:id="@+id/btnCancelar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        android:hint="Cadastro Turismo"
-        android:text="Cadastro Turismo"
+        android:layout_marginTop="69dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="50dp"
+        android:text="Cancelar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnCadastrar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNascimento"/>
+
+    <TextView
+        android:id="@+id/txtCadastrarUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar Usuário"
         android:textColor="@color/branco"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnCancelar1"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="45dp"
-        android:text="Cancelar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDescricao" />
-
-    <Button
-        android:id="@+id/btnCadastrar1"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="50dp"
-        android:text="Cadastrar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDescricao" />
-
 
 
 

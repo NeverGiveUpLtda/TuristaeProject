@@ -6,24 +6,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class TelaCadastroTurismo extends AppCompatActivity {
-
+public class TelaCadastrarUsuario extends AppCompatActivity {
 
     Button btnCancelar, btnCadastrar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_cadastro_turismo);
+        setContentView(R.layout.activity_tela_cadastrar_usuario);
 
-        btnCancelar = (Button) findViewById(R.id.btnCancelar1);
-        btnCadastrar = (Button) findViewById(R.id.btnCadastrar1);
+        btnCancelar = (Button) findViewById(R.id.btnCancelar);
+        btnCadastrar = (Button) findViewById(R.id.btnCadastrar);
+
 
         btnCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
-            }
+                    finish();
+                }
         });
     }
+
 }

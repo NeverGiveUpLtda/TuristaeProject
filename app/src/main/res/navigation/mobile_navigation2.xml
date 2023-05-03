@@ -24,9 +24,10 @@
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
-        android:id="@+id/nav_contato"
-        android:name="com.app.turistae.ui.contato.ContatoFragment"
-        android:label="Contato"
-        tools:layout="@layout/fragment_contato"
+        android:id="@+id/nav_turismo"
+        android:name="com.app.turistae.ui.turismo.TurismoFragment"
+        android:label="Cadastrar turismo"
+        tools:layout="@layout/fragment_turismo"
         />
+
 </navigation>

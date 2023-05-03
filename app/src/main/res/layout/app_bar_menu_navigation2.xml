@@ -20,8 +20,9 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_menu_navigation2" />
-
+    <include
+        layout="@layout/content_menu_navigation2"
+        android:layout_height="556dp" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

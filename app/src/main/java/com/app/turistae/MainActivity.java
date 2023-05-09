@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void setupRecycler(){
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager((getApplicationContext()));
-        recyclerGuia = findViewById(R.id.recyclerGuiaTuristico);
+        recyclerGuia = findViewById(R.id.recyclerListaLocais);
         recyclerGuia.setLayoutManager(layoutManager);
 
         // setando o adapter

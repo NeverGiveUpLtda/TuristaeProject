@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/azul_marinho"
-    tools:context=".model.tela_login">
+    tools:context=".TelaLogin">
 
     <ImageView
         android:id="@+id/imageView"

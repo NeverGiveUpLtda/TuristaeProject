@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Turistae">
         <activity
+            android:name=".TelaListaTurismos"
+            android:exported="false" />
+        <activity
             android:name=".TelaCadastrarUsuario"
             android:exported="false" />
         <activity

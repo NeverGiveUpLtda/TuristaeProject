@@ -34,6 +34,7 @@
         android:id="@+id/BtnSaibaMais"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
+        android:layout_marginBottom="100dp"
         android:background="#FFFFFF"
         android:shadowColor="#FAFAFA"
         android:text="Saiba Mais"
@@ -41,12 +42,12 @@
         android:textColorHighlight="#8A5959"
         android:textColorHint="#1F4EBD"
         android:textColorLink="#B32626"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/TxtTextoLocal"
         app:layout_constraintHorizontal_bias="0.958"
         app:layout_constraintStart_toStartOf="@+id/TxtTextoLocal"
         app:rippleColor="#F3F3F3"
-        app:strokeColor="#F3F0F0"
-        tools:layout_editor_absoluteY="607dp" />
+        app:strokeColor="#F3F0F0" />
 
     <TextView
         android:id="@+id/TxtTextoLocal"

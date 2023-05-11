@@ -15,7 +15,7 @@ public class TelaCadastrarUsuario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_cadastrar_usuario);
 
-        btnCancelar = (Button) findViewById(R.id.btnCancelar);
+        btnCancelar = (Button) findViewById(R.id.btnExcluir);
         btnCadastrar = (Button) findViewById(R.id.btnCadastrar);
 
 

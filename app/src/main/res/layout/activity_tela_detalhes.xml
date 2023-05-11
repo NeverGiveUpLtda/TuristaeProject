@@ -26,6 +26,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="35dp"
         android:text="ABRIR ROTA"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnNavegador" />
 
@@ -36,6 +37,7 @@
         android:layout_marginStart="35dp"
         android:layout_marginTop="15dp"
         android:text="ABRIR MAPA"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnMensagem" />
 
@@ -56,6 +58,7 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="35dp"
         android:text="ABRIR NAVEGADOR"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTextoLocal2" />
 
@@ -67,6 +70,7 @@
         android:layout_marginStart="35dp"
         android:layout_marginTop="25dp"
         android:text="ENVIAR MENSAGEM"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTextoLocal2" />
 

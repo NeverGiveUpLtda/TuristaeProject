@@ -26,4 +26,9 @@
     <style name="Theme.Turistae.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.Turistae.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="BtnPadrao" parent="ThemeOverlay.AppCompat">
+        <item name="colorAccent">@color/maya_blue</item>
+    </style>
+
 </resources>

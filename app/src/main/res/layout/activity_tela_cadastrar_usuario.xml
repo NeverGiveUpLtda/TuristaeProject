@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/azul_marinho">
+    android:background="@color/azul_marinho"
+    tools:layout_editor_absoluteX="-2dp"
+    tools:layout_editor_absoluteY="0dp">
 
     <EditText
         android:id="@+id/txtLogin"
@@ -16,8 +18,8 @@
         android:background="@color/branco"
         android:ems="10"
         android:hint="Login"
-        android:textAlignment="center"
         android:inputType="textPersonName"
+        android:textAlignment="center"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -32,8 +34,8 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
         android:background="#FFFFFF"
-        android:inputType="textPostalAddress"
         android:hint="Cidade"
+        android:inputType="textPostalAddress"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -95,8 +97,8 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
         android:background="#FFFFFF"
-        android:inputType="date"
         android:hint="Data de Nascimento"
+        android:inputType="date"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -128,8 +130,8 @@
         android:layout_marginEnd="50dp"
         android:background="#FFFFFF"
         android:hint="Confirmar Senha"
-        android:textAlignment="center"
         android:inputType="textPassword"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtSenha" />
@@ -173,8 +175,8 @@
         android:layout_marginEnd="50dp"
         android:background="#FFFFFF"
         android:hint="Telefone"
-        android:textAlignment="center"
         android:inputType="phone"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
@@ -198,40 +200,41 @@
         android:id="@+id/btnCadastrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
         android:layout_marginTop="69dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="15dp"
         android:text="Cadastrar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnCancelar"
-        app:layout_constraintTop_toBottomOf="@+id/txtNascimento" />
+        app:layout_constraintTop_toBottomOf="@+id/txtNascimento"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/btnCancelar"
+
+        android:id="@+id/btnExcluir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="69dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="15dp"
         android:text="Cancelar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnCadastrar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNascimento"/>
+        app:layout_constraintTop_toBottomOf="@+id/txtNascimento"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/txtCadastrarUser"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="Cadastrar Usuário"
+        android:textAlignment="center"
         android:textColor="@color/branco"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

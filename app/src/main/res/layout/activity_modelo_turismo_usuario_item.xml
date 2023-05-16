@@ -12,7 +12,7 @@
 
 
     <ImageView
-        android:id="@+id/fotoImg"
+        android:id="@+id/fotoImgEditar"
         android:layout_width="169dp"
         android:layout_height="143dp"
         android:layout_marginTop="30dp"
@@ -24,7 +24,7 @@
         tools:srcCompat="@mipmap/jdbotanico" />
 
     <Button
-        android:id="@+id/saibaMaisBtn"
+        android:id="@+id/btnEditarTurismo"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginBottom="48dp"
@@ -44,7 +44,7 @@
         android:text="Titulo"
         android:textColor="#EBEBEB"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/fotoImg"
+        app:layout_constraintBottom_toTopOf="@+id/fotoImgEditar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

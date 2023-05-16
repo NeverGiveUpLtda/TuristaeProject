@@ -1,16 +1,20 @@
 package com.app.turistae.adapter;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.app.turistae.R;
 
-public class GuiaHolder extends RecyclerView.ViewHolder {
+public class FotosTurismoEditarHolder extends RecyclerView.ViewHolder {
     private ImageView fotoImg;
     private TextView nomeLocalTxt;
-    private TextView descricaoTxt;
+
+    private Button btnEditar;
 
     // getter e setter nome local
     public TextView getNomeLocalTxt() {
@@ -21,13 +25,12 @@ public class GuiaHolder extends RecyclerView.ViewHolder {
         this.nomeLocalTxt= nomeLocalTxt;
     }
 
-    // getter e setter descricao
-    public TextView getDescricaoTxt() {
-        return descricaoTxt;
+    public Button getBtnEditar() {
+        return btnEditar;
     }
 
-    public void setDescricaoTxt(TextView descricaoTxt) {
-        this.descricaoTxt = descricaoTxt;
+    public void setBtnEditar(Button btnEditar) {
+        this.btnEditar = btnEditar;
     }
 
     // getter e setter foto local
@@ -39,11 +42,11 @@ public class GuiaHolder extends RecyclerView.ViewHolder {
         this.fotoImg = fotoImg;
     }
 
-    public GuiaHolder(@NonNull View itemView) {
+    public FotosTurismoEditarHolder(@NonNull View itemView) {
         super(itemView);
         // por que isso tem que ficar dentro do GuiaHolder?
         nomeLocalTxt = (TextView) itemView.findViewById(R.id.nomeLocalTxt);
-        descricaoTxt = (TextView) itemView.findViewById(R.id.descricaoTxt);
+        btnEditar = (Button) itemView.findViewById(R.id.btnEditarTurismo);
         fotoImg = (ImageView) itemView.findViewById(R.id.fotoImgEditar);
     }
 }

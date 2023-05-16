@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    android:orientation="vertical"
     android:background="@color/azul_marinho">
+
 
 
     <EditText
@@ -24,9 +27,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtConfirmarSenha" />
+        app:layout_constraintTop_toBottomOf="@+id/txtConfirmarSenha"
+        android:importantForAutofill="no" />
 
-    <TextView
+    <EditText
         android:id="@+id/txtTelefone"
         android:layout_width="0dp"
         android:layout_height="35dp"
@@ -245,4 +249,8 @@
         app:layout_constraintTop_toBottomOf="@+id/txtDescricao" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</ScrollView>

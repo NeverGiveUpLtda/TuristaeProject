@@ -4,7 +4,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
-    private static final String BASE_URL = "https://61560fe1e039a0001725a8ed.mockapi.io/api/v1/";
+    private static final String BASE_URL = "http://localhost:8080/api/";
 
     private static Retrofit retrofit = null;
 

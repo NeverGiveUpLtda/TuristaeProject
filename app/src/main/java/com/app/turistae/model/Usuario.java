@@ -180,7 +180,6 @@ public class Usuario {
                 '}';
     }
 
-
 }
 
 //{ AQUI ESTA O OBJETO QUE PEGUEI DO POSTMAN PARA FAZER ESTA CLASSE

@@ -1,19 +1,19 @@
 package com.app.turistae.model;
 
 public class Categoria {
-    public String nome;
+    private String nome;
 
     public Categoria() {}
 
-    public Categoria(String nome) {
+    private Categoria(String nome) {
         this.nome = nome;
     }
 
-    public String getNome() {
+    private String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
+    private void setNome(String nome) {
         this.nome = nome;
     }
 }

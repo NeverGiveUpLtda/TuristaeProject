@@ -1,7 +1,6 @@
 package com.app.turistae.model;
 
 public class Locais {
-
     private String nomeLocal;
     private String descricaoLocal;
     private int fotoLocal;

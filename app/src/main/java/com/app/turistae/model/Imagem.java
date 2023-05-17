@@ -1,8 +1,8 @@
 package com.app.turistae.model;
 
 public class Imagem {
-    public int turismoId;
-    public String string64;
+    private int turismoId;
+    private String string64;
 
     public Imagem() {}
 

@@ -7,7 +7,7 @@ public class Usuario {
     private String senha;
     private String nome;
     private String email;
-    private String telefone;
+    private Long telefone;
     private String numeroCasa;
     private String rua;
     private String bairro;
@@ -21,7 +21,7 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(int id, String nomeUsuario, String senha, String nome, String email, String telefone, String numeroCasa, String rua, String bairro, String cidade, String estado, String dataNascimento, String profissao, String cadastroPessoaFisica, String registroGeral) {
+    public Usuario(int id, String nomeUsuario, String senha, String nome, String email, Long telefone, String numeroCasa, String rua, String bairro, String cidade, String estado, String dataNascimento, String profissao, String cadastroPessoaFisica, String registroGeral) {
         this.id = id;
         this.nomeUsuario = nomeUsuario;
         this.senha = senha;
@@ -79,11 +79,11 @@ public class Usuario {
         this.email = email;
     }
 
-    public String getTelefone() {
+    public Long getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(String telefone) {
+    public void setTelefone(Long telefone) {
         this.telefone = telefone;
     }
 

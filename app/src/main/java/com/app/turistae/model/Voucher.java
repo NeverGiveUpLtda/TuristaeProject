@@ -1,9 +1,10 @@
 package com.app.turistae.model;
 
 public class Voucher {
-    public int turismoId;
+    private int turismoId;
 
-    public Voucher() {}
+    public Voucher() {
+    }
 
     public Voucher(int turismoId) {
         this.turismoId = turismoId;

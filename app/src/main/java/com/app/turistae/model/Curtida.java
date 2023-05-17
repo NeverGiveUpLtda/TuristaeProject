@@ -1,8 +1,8 @@
 package com.app.turistae.model;
 
 public class Curtida {
-    public int turismoId;
-    public int usuarioId;
+    private int turismoId;
+    private int usuarioId;
 
     public Curtida() {}
 

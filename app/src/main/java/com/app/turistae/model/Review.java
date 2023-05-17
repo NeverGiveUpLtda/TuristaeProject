@@ -1,10 +1,10 @@
 package com.app.turistae.model;
 
 public class Review {
-    public String teste;
-    public int nota;
-    public int turismoId;
-    public int usuarioId;
+    private String teste;
+    private int nota;
+    private int turismoId;
+    private int usuarioId;
 
     public Review() {}
 
@@ -47,10 +47,3 @@ public class Review {
         this.usuarioId = usuarioId;
     }
 }
-
-/*
-texto": "teste",
-"nota": 0,
-"turismoId": 1,
-"usuarioId": 1
-*/

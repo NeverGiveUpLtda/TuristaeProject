@@ -81,7 +81,7 @@ public class TelaEditarTurismo extends AppCompatActivity implements EasyPermissi
                 .setActivityTitle("Selecione as imagens")
                 .setSpan(FilePickerConst.SPAN_TYPE.FOLDER_SPAN, 3)
                 .setSpan(FilePickerConst.SPAN_TYPE.DETAIL_SPAN,3)
-                .setMaxCount(4)
+                .setMaxCount(3)
                 .setSelectedFiles(listaImagens)
                 .setActivityTheme(R.style.CustomTheme)
                 .pickPhoto(this);

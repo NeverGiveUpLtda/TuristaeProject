@@ -16,8 +16,8 @@ public class TelaCadastroTurismo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_cadastro_turismo);
 
-        btnCancelar = (Button) findViewById(R.id.btnExcluir);
-        btnCadastrar = (Button) findViewById(R.id.btnCadastrar);
+        btnCancelar = (Button) findViewById(R.id.btnCancelarCadUser);
+        btnCadastrar = (Button) findViewById(R.id.btnCadastrarUsuario);
 
         btnCancelar.setOnClickListener(new View.OnClickListener() {
             @Override

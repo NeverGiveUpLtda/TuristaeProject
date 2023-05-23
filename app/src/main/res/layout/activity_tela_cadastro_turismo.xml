@@ -31,7 +31,7 @@
         android:importantForAutofill="no" />
 
     <EditText
-        android:id="@+id/txtTelefone"
+        android:id="@+id/txtTelefoneCadUser"
         android:layout_width="0dp"
         android:layout_height="35dp"
         android:layout_marginStart="50dp"
@@ -44,10 +44,10 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtLogradouro" />
+        app:layout_constraintTop_toBottomOf="@+id/txtNumeroCadUser" />
 
     <TextView
-        android:id="@+id/txtNome"
+        android:id="@+id/txtNomeCadUser"
         android:layout_width="0dp"
         android:layout_height="35dp"
         android:layout_marginStart="50dp"
@@ -63,7 +63,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtCnpj" />
 
     <TextView
-        android:id="@+id/txtRua"
+        android:id="@+id/txtRuaCadUser"
         android:layout_width="0dp"
         android:layout_height="35dp"
         android:layout_marginStart="50dp"
@@ -76,10 +76,10 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNome" />
+        app:layout_constraintTop_toBottomOf="@+id/txtNomeCadUser" />
 
     <TextView
-        android:id="@+id/txtBairro"
+        android:id="@+id/txtBairroCadUser"
         android:layout_width="0dp"
         android:layout_height="35dp"
         android:layout_marginStart="50dp"
@@ -91,10 +91,10 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtRua" />
+        app:layout_constraintTop_toBottomOf="@+id/txtRuaCadUser" />
 
     <TextView
-        android:id="@+id/txtCidade"
+        android:id="@+id/txtCidadeCadUser"
         android:layout_width="0dp"
         android:layout_height="35dp"
         android:layout_marginStart="50dp"
@@ -107,10 +107,10 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtBairro" />
+        app:layout_constraintTop_toBottomOf="@+id/txtBairroCadUser" />
 
     <TextView
-        android:id="@+id/txtEstado"
+        android:id="@+id/txtEstadoCadUser"
         android:layout_width="0dp"
         android:layout_height="35dp"
         android:layout_marginStart="50dp"
@@ -123,10 +123,10 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCidade" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCidadeCadUser" />
 
     <TextView
-        android:id="@+id/txtLogradouro"
+        android:id="@+id/txtNumeroCadUser"
         android:layout_width="0dp"
         android:layout_height="35dp"
         android:layout_marginStart="50dp"
@@ -139,7 +139,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEstado" />
+        app:layout_constraintTop_toBottomOf="@+id/txtEstadoCadUser" />
 
     <TextView
         android:id="@+id/txtDescricao"
@@ -155,10 +155,10 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTelefone" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTelefoneCadUser" />
 
     <TextView
-        android:id="@+id/txtLogin"
+        android:id="@+id/txtLoginCadUser"
         android:layout_width="314dp"
         android:layout_height="31dp"
         android:layout_marginStart="50dp"
@@ -174,7 +174,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtSenha"
+        android:id="@+id/txtSenhaCadUser"
         android:layout_width="0dp"
         android:layout_height="35dp"
         android:layout_marginStart="50dp"
@@ -188,7 +188,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/txtLoginCadUser" />
 
     <TextView
         android:id="@+id/txtConfirmarSenha"
@@ -205,7 +205,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtSenha" />
+        app:layout_constraintTop_toBottomOf="@+id/txtSenhaCadUser" />
 
     <TextView
         android:id="@+id/txtCdastroTurismo"
@@ -224,7 +224,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnExcluir"
+        android:id="@+id/btnCancelarCadUser"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginStart="50dp"
@@ -236,7 +236,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtDescricao" />
 
     <Button
-        android:id="@+id/btnCadastrar"
+        android:id="@+id/btnCadastrarUsuario"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"

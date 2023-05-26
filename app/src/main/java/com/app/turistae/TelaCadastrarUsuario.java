@@ -12,7 +12,6 @@ import android.widget.Toast;
 import com.app.turistae.api.ApiClient;
 import com.app.turistae.api.UsuarioService;
 import com.app.turistae.model.Usuario;
-import com.santalu.maskara.MaskChangedListener;
 import com.santalu.maskara.widget.MaskEditText;
 
 import java.text.SimpleDateFormat;
@@ -44,21 +43,21 @@ public class TelaCadastrarUsuario extends AppCompatActivity {
         btnCadastrar = (Button) findViewById(R.id.btnCadastrarUsuario);
 
         //campos do forms de cadastro do usuário
-        txtLoginCadUser = findViewById(R.id.txtLoginCadUser);
-        txtCidadeCadUser = findViewById(R.id.txtCidadeCadUser);
-        txtBairroCadUser = findViewById(R.id.txtBairroCadUser);
-        txtRuaCadUser = findViewById(R.id.txtRuaCadUser);
-        txtNumeroCasaCadUser = findViewById(R.id.txtNumeroCadUser);
-        txtTelefoneCadUser = findViewById(R.id.txtTelefoneCadUser);
+        txtLoginCadUser = findViewById(R.id.txtCadTurLogin);
+        txtCidadeCadUser = findViewById(R.id.txtCadTurCidade);
+        txtBairroCadUser = findViewById(R.id.txtCadTurBairro);
+        txtRuaCadUser = findViewById(R.id.txtCadTurRua);
+        txtNumeroCasaCadUser = findViewById(R.id.txtCadTurLogradouro);
+        txtTelefoneCadUser = findViewById(R.id.txtCadTurTelefone);
         txtNascimentoCadUser = findViewById(R.id.txtNascimentoCadUser);
         txtConfirmaSenhaCadUser = findViewById(R.id.txtSenhaConfirmaCadUser);
-        txtNomeCadUser = findViewById(R.id.txtNomeCadUser);
-        txtEstadoCadUser = findViewById(R.id.txtEstadoCadUser);
+        txtNomeCadUser = findViewById(R.id.txtCadTurNome);
+        txtEstadoCadUser = findViewById(R.id.txtCadTurEstado);
         txtCPFCadUser = findViewById(R.id.txtCPFCadUser);
         txtEmailCadUser = findViewById(R.id.txtEmailCadUser);
         txtRGCadUser = findViewById(R.id.txtRGCadUser);
         txtProfissaoCadUser = findViewById(R.id.txtProfissaoCadUser);
-        txtSenhaCadUser = findViewById(R.id.txtSenhaCadUser);
+        txtSenhaCadUser = findViewById(R.id.txtCadTurSenha);
 
 
 

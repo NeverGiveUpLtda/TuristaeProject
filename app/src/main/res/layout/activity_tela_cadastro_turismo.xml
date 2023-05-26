@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="5dp"
     android:orientation="vertical"
-    android:background="@color/azul_marinho">
+    android:background="@color/azul_marinho"
+    android:fillViewport="true">
 
-
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/azul_marinho">
 
     <EditText
-        android:id="@+id/txtCnpj"
+        android:id="@+id/txtCadTurCnpj"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
@@ -27,13 +30,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtConfirmarSenha"
+        app:layout_constraintTop_toBottomOf="@+id/txtCadTurConfSenha"
         android:importantForAutofill="no" />
 
     <EditText
-        android:id="@+id/txtTelefoneCadUser"
+        android:id="@+id/txtCadTurTelefone"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
@@ -44,12 +47,12 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNumeroCadUser" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCadTurLogradouro" />
 
-    <TextView
-        android:id="@+id/txtNomeCadUser"
+    <EditText
+        android:id="@+id/txtCadTurNome"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
@@ -60,12 +63,12 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCnpj" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCadTurCnpj" />
 
-    <TextView
-        android:id="@+id/txtRuaCadUser"
+    <EditText
+        android:id="@+id/txtCadTurRua"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
@@ -76,12 +79,12 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNomeCadUser" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCadTurNome" />
 
-    <TextView
-        android:id="@+id/txtBairroCadUser"
+    <EditText
+        android:id="@+id/txtCadTurBairro"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
@@ -91,12 +94,12 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtRuaCadUser" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCadTurRua" />
 
-    <TextView
-        android:id="@+id/txtCidadeCadUser"
+    <EditText
+        android:id="@+id/txtCadTurCidade"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
@@ -107,12 +110,12 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtBairroCadUser" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCadTurBairro" />
 
-    <TextView
-        android:id="@+id/txtEstadoCadUser"
+    <EditText
+        android:id="@+id/txtCadTurEstado"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
@@ -123,12 +126,12 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCidadeCadUser" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCadTurCidade" />
 
-    <TextView
-        android:id="@+id/txtNumeroCadUser"
+    <EditText
+        android:id="@+id/txtCadTurLogradouro"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
@@ -139,44 +142,44 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEstadoCadUser" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCadTurEstado" />
 
-    <TextView
-        android:id="@+id/txtDescricao"
-        android:layout_width="311dp"
-        android:layout_height="62dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="50dp"
-        android:background="@color/branco"
-        android:hint="Descrição"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTelefoneCadUser" />
+        <EditText
+            android:id="@+id/txtCadTurDescricao"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="50dp"
+            android:background="@color/branco"
+            android:hint="Descrição"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtCadTurTelefone" />
 
-    <TextView
-        android:id="@+id/txtLoginCadUser"
-        android:layout_width="314dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="50dp"
-        android:background="@color/branco"
-        android:hint="Login"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <EditText
+            android:id="@+id/txtCadTurLogin"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="50dp"
+            android:background="@color/branco"
+            android:hint="Login"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txtSenhaCadUser"
+    <EditText
+        android:id="@+id/txtCadTurSenha"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
@@ -188,12 +191,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtLoginCadUser" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCadTurLogin" />
 
-    <TextView
-        android:id="@+id/txtConfirmarSenha"
+    <EditText
+        android:id="@+id/txtCadTurConfSenha"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
@@ -205,9 +208,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtSenhaCadUser" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCadTurSenha" />
 
-    <TextView
+    <EditText
         android:id="@+id/txtCdastroTurismo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -233,7 +236,7 @@
         android:text="Cancelar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDescricao" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCadTurDescricao" />
 
     <Button
         android:id="@+id/btnCadastrarUsuario"
@@ -246,11 +249,8 @@
         android:text="Cadastrar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDescricao" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCadTurDescricao" />
 
-
-
-
-
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

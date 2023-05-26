@@ -7,8 +7,6 @@
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-
-
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -16,11 +14,10 @@
     tools:layout_editor_absoluteX="-2dp"
     tools:layout_editor_absoluteY="0dp">
 
-
     <EditText
-        android:id="@+id/txtLoginCadUser"
+        android:id="@+id/txtCadTurLogin"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="50dp"
@@ -35,9 +32,9 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/txtCidadeCadUser"
+        android:id="@+id/txtCadTurCidade"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
@@ -47,12 +44,12 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEstadoCadUser" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCadTurEstado" />
 
     <EditText
-        android:id="@+id/txtBairroCadUser"
+        android:id="@+id/txtCadTurBairro"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
@@ -63,12 +60,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCidadeCadUser" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCadTurCidade" />
 
     <EditText
-        android:id="@+id/txtRuaCadUser"
+        android:id="@+id/txtCadTurRua"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
@@ -79,12 +76,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtBairroCadUser" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCadTurBairro" />
 
     <EditText
         android:id="@+id/txtProfissaoCadUser"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="50dp"
@@ -95,12 +92,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNumeroCadUser" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCadTurLogradouro" />
 
     <EditText
-        android:id="@+id/txtNumeroCadUser"
+        android:id="@+id/txtCadTurLogradouro"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="50dp"
@@ -111,12 +108,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtRuaCadUser" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCadTurRua" />
 
     <com.santalu.maskara.widget.MaskEditText
         android:id="@+id/txtNascimentoCadUser"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
@@ -135,7 +132,7 @@
     <com.santalu.maskara.widget.MaskEditText
         android:id="@+id/txtCPFCadUser"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
@@ -153,7 +150,7 @@
     <com.santalu.maskara.widget.MaskEditText
         android:id="@+id/txtRGCadUser"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
@@ -170,9 +167,9 @@
 
 
     <EditText
-        android:id="@+id/txtSenhaCadUser"
+        android:id="@+id/txtCadTurSenha"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="50dp"
@@ -183,12 +180,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtLoginCadUser" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCadTurLogin" />
 
     <EditText
         android:id="@+id/txtSenhaConfirmaCadUser"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
@@ -198,12 +195,12 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtSenhaCadUser" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCadTurSenha" />
 
     <EditText
-        android:id="@+id/txtNomeCadUser"
+        android:id="@+id/txtCadTurNome"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
@@ -218,7 +215,7 @@
     <EditText
         android:id="@+id/txtEmailCadUser"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
@@ -228,12 +225,12 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNomeCadUser" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCadTurNome" />
 
     <com.santalu.maskara.widget.MaskEditText
-        android:id="@+id/txtTelefoneCadUser"
+        android:id="@+id/txtCadTurTelefone"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
@@ -248,9 +245,9 @@
         app:layout_constraintTop_toBottomOf="@+id/txtEmailCadUser" />
 
     <com.santalu.maskara.widget.MaskEditText
-        android:id="@+id/txtEstadoCadUser"
+        android:id="@+id/txtCadTurEstado"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="50dp"
@@ -262,7 +259,7 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTelefoneCadUser" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCadTurTelefone" />
 
     <Button
         android:id="@+id/btnCadastrarUsuario"
@@ -298,7 +295,7 @@
         android:textAlignment="center"
         android:textColor="@color/branco"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtLoginCadUser"
+        app:layout_constraintBottom_toTopOf="@+id/txtCadTurLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

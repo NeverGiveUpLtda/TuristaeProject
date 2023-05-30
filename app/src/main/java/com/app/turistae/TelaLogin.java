@@ -2,7 +2,9 @@ package com.app.turistae;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -32,6 +34,7 @@ public class TelaLogin extends AppCompatActivity {
 
     TextView txtCadastrarTurismo, txtCadastrarUsuario, txtUsuarioLogin,txtSenhaLogin;
 
+    private SharedPreferences sharedPreferences;
 
     UsuarioService usuarioService;
 
@@ -40,8 +43,12 @@ public class TelaLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_login);
 
+
         btnEntrar = (Button) findViewById(R.id.btnEntrar);
         usuarioService = ApiClient.getUsuarioService();
+
+        sharedPreferences = getSharedPreferences("user_pref", Context.MODE_PRIVATE);
+
         txtCadastrarUsuario = findViewById(R.id.txtCadastrarUsuario);
         txtUsuarioLogin = findViewById(R.id.txtUsuarioLogin);
         txtSenhaLogin = findViewById(R.id.txtSenhaLogin);
@@ -57,9 +64,7 @@ public class TelaLogin extends AppCompatActivity {
                 usu.setSenha(txtSenhaLogin.getText().toString());
                 loginusuario(usu);
 
-                // Limpar os campos de login
-                txtUsuarioLogin.setText("");
-                txtSenhaLogin.setText("");
+
             }
 
 
@@ -81,32 +86,28 @@ public class TelaLogin extends AppCompatActivity {
             @Override
             public void onResponse(Call<Usuario> call, Response<Usuario> response) {
                 if(response.isSuccessful()){
+                    Usuario loggedUser = response.body();
+                    saveUserToSharedPreferences(loggedUser); // Salvar o objeto Usuario no SharedPreferences
+
+
                     Intent intent = new Intent(TelaLogin.this, Menu_Navigation.class);
                     startActivity(intent);
-                }
-                else{
-                    JSONArray json = null;
-                    try {
-                        json = new JSONArray( (response.errorBody().string()) );
-
-                      //  String errMsg = json.getString("errors");
-
-                        //Toast.makeText(TelaLogin.this,
-                         //       errMsg, Toast.LENGTH_SHORT).show();
-
-                    } catch (JSONException e) {
-                        throw new RuntimeException(e);
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
-
-
                 }
             }
             @Override
             public void onFailure(Call<Usuario> call, Throwable t) {
                 Log.e("Erro ao logar", t.getMessage());
+                Toast.makeText(getApplicationContext(), "Atenção: " + t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }
+
+    private void saveUserToSharedPreferences(Usuario usuario) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("usuarioId", usuario.getId());
+        editor.putString("usuarioNome", usuario.getNomeUsuario());
+        editor.putString("usuarioEmail", usuario.getEmail());
+        editor.apply();
+    }
+
 }

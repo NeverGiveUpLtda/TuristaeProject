@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.turistae.R;
 import com.app.turistae.TelaEditarTurismo;
-import com.app.turistae.dataset.GuiaDataset;
 import com.app.turistae.model.Locais;
 
 import java.util.List;
@@ -68,10 +67,7 @@ public class FotosTurismoEditarAdapter extends RecyclerView.Adapter<FotosTurismo
         notifyItemRangeChanged(position,listaLocais.size());
     }
 
-    public void adicionarItem(Locais local){
-        GuiaDataset.addLocal(local);
-        notifyItemInserted(getItemCount());
-    }
+
 
     @Override
     public int getItemCount() {

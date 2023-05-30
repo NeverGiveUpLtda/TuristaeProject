@@ -1,38 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/azul_marinho">
+    android:layout_margin="5dp"
+    android:orientation="vertical"
+    android:background="@color/azul_marinho"
+    android:fillViewport="true">
 
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/azul_marinho">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/txtCdastroTurismo"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+        <com.santalu.maskara.widget.MaskEditText
+            android:id="@+id/txtCadTurCnpj"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="25dp"
             android:layout_marginEnd="50dp"
-            android:text="Cadastrar Turismo"
+            android:background="@color/branco"
+            android:ems="10"
+            android:hint="CNPJ"
+            app:mask="__.___.___/____-__"
+            app:maskCharacter="_"
+            android:importantForAutofill="no"
+            android:inputType="number"
             android:textAlignment="center"
-            android:textColor="@color/branco"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtCdastroTurismo" />
+
+        <com.santalu.maskara.widget.MaskEditText
+            android:id="@+id/txtCadTurTelefone"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="50dp"
+            android:background="@color/branco"
+            android:hint="Telefone contato"
+            android:inputType="phone"
+            android:textAlignment="center"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/txtCadTurNumeroLocal"
+            app:mask="(__) _____-____"
+            app:maskCharacter="_" />
 
         <EditText
             android:id="@+id/txtCadTurNome"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_marginStart="50dp"
             android:layout_marginTop="15dp"
@@ -47,43 +71,8 @@
             app:layout_constraintTop_toBottomOf="@+id/txtCadTurCnpj" />
 
         <EditText
-            android:id="@+id/txtCadTurCnpj"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="50dp"
-            android:background="@color/branco"
-            android:ems="10"
-            android:hint="CNPJ"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtCadTurConfSenha" />
-
-        <EditText
-            android:id="@+id/txtCadTurTelefone"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="50dp"
-            android:background="@color/branco"
-            android:hint="Telefone contato"
-            android:inputType="phone"
-            android:textAlignment="center"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtCadTurLogradouro" />
-
-        <EditText
             android:id="@+id/txtCadTurRua"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_marginStart="50dp"
             android:layout_marginTop="15dp"
@@ -99,7 +88,7 @@
 
         <EditText
             android:id="@+id/txtCadTurBairro"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_marginStart="50dp"
             android:layout_marginTop="15dp"
@@ -114,7 +103,7 @@
 
         <EditText
             android:id="@+id/txtCadTurCidade"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_marginStart="50dp"
             android:layout_marginTop="15dp"
@@ -128,15 +117,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtCadTurBairro" />
 
-        <EditText
+        <com.santalu.maskara.widget.MaskEditText
             android:id="@+id/txtCadTurEstado"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_marginStart="50dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="50dp"
             android:background="@color/branco"
             android:hint="Estado"
+            app:mask="__"
+            app:maskCharacter="_"
             android:inputType="textPersonName"
             android:textAlignment="center"
             android:textSize="16sp"
@@ -145,8 +136,8 @@
             app:layout_constraintTop_toBottomOf="@+id/txtCadTurCidade" />
 
         <EditText
-            android:id="@+id/txtCadTurLogradouro"
-            android:layout_width="match_parent"
+            android:id="@+id/txtCadTurNumeroLocal"
+            android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_marginStart="50dp"
             android:layout_marginTop="15dp"
@@ -162,8 +153,8 @@
 
         <EditText
             android:id="@+id/txtCadTurDescricao"
-            android:layout_width="311dp"
-            android:layout_height="110dp"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
             android:layout_marginStart="50dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="50dp"
@@ -174,90 +165,86 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtCadTurTelefone" />
+            app:layout_constraintTop_toBottomOf="@+id/spinnerCategoria" />
 
         <EditText
-            android:id="@+id/txtCadTurLogin"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:id="@+id/txtCdastroTurismo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="50dp"
-            android:background="@color/branco"
-            android:hint="Login"
-            android:inputType="textPersonName"
+            android:hint="Cadastro Turismo"
+            android:text="Cadastro Turismo"
             android:textAlignment="center"
-            android:textSize="16sp"
+            android:textColor="@color/branco"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtCadTurDescricao" />
-
-        <EditText
-            android:id="@+id/txtCadTurSenha"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="50dp"
-            android:background="@color/branco"
-            android:hint="Senha"
-            android:inputType="textPassword"
-            android:textAlignment="center"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtCadTurLogin" />
-
-        <EditText
-            android:id="@+id/txtCadTurConfSenha"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="50dp"
-            android:background="@color/branco"
-            android:hint="Confirmar senha"
-            android:inputType="textPassword"
-            android:textAlignment="center"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtCadTurSenha" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/btnCancelarCadUser"
-            android:layout_width="150dp"
-            android:layout_height="60dp"
-            android:backgroundTint="@color/cinza"
+            android:id="@+id/btnCancelarCadTur"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="50dp"
+            android:layout_marginTop="16dp"
             android:layout_marginBottom="20dp"
             android:text="Cancelar"
-            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtCadTurDescricao" />
+            app:layout_constraintTop_toBottomOf="@+id/btnPick" />
 
         <Button
-            android:id="@+id/btnCadastrarUsuario"
-            android:layout_width="150dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="212dp"
-            android:layout_marginTop="-80dp"
+            android:id="@+id/btnCadastrarTurismo"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="50dp"
             android:layout_marginBottom="20dp"
             android:backgroundTint="@color/maya_blue"
             android:text="Cadastrar"
-            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtCadTurDescricao" />
+            app:layout_constraintTop_toBottomOf="@+id/btnPick" />
 
-    </LinearLayout>
-    </ScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerFotosTurismo"
+            android:layout_width="273dp"
+            android:layout_height="121dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtCadTurDescricao"
+            tools:ignore="MissingConstraints"
+            tools:listitem="@layout/item_main" />
+
+        <Button
+            android:id="@+id/btnPick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="15dp"
+            android:text="Foto"
+            app:layout_constraintEnd_toStartOf="@+id/btnCadastrarTurismo"
+            app:layout_constraintStart_toEndOf="@+id/btnCancelarCadTur"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerFotosTurismo"></Button>
+
+        <Spinner
+            android:id="@+id/spinnerCategoria"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/branco"
+            android:backgroundTint="#FFFFFF"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtCadTurTelefone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

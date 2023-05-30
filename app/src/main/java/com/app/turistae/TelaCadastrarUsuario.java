@@ -23,7 +23,7 @@ import retrofit2.Response;
 
 public class TelaCadastrarUsuario extends AppCompatActivity {
 
-    Button btnCancelar, btnCadastrar;
+    Button btnCancelarUser, btnCadastrarUser;
     UsuarioService usuarioService;
 
     TextView txtLoginCadUser, txtCidadeCadUser, txtBairroCadUser, txtRuaCadUser,
@@ -39,36 +39,36 @@ public class TelaCadastrarUsuario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_cadastrar_usuario);
         usuarioService = ApiClient.getUsuarioService();
-        btnCancelar = (Button) findViewById(R.id.btnCancelarCadUser);
-        btnCadastrar = (Button) findViewById(R.id.btnCadastrarUsuario);
+        btnCancelarUser = (Button) findViewById(R.id.btnCancelarCadUser);
+        btnCadastrarUser = (Button) findViewById(R.id.btnCadastrarUsuario);
 
         //campos do forms de cadastro do usuário
-        txtLoginCadUser = findViewById(R.id.txtCadTurLogin);
-        txtCidadeCadUser = findViewById(R.id.txtCadTurCidade);
-        txtBairroCadUser = findViewById(R.id.txtCadTurBairro);
-        txtRuaCadUser = findViewById(R.id.txtCadTurRua);
-        txtNumeroCasaCadUser = findViewById(R.id.txtCadTurLogradouro);
-        txtTelefoneCadUser = findViewById(R.id.txtCadTurTelefone);
+        txtLoginCadUser = findViewById(R.id.txtLoginCadUser);
+        txtCidadeCadUser = findViewById(R.id.txtCidadeCadUser);
+        txtBairroCadUser = findViewById(R.id.txtBairroCadUser);
+        txtRuaCadUser = findViewById(R.id.txtRuaCadUser);
+        txtNumeroCasaCadUser = findViewById(R.id.txtNumeroCadUser);
+        txtTelefoneCadUser = findViewById(R.id.txtTelefoneCadUser);
         txtNascimentoCadUser = findViewById(R.id.txtNascimentoCadUser);
         txtConfirmaSenhaCadUser = findViewById(R.id.txtSenhaConfirmaCadUser);
-        txtNomeCadUser = findViewById(R.id.txtCadTurNome);
-        txtEstadoCadUser = findViewById(R.id.txtCadTurEstado);
+        txtNomeCadUser = findViewById(R.id.txtNomeCadUser);
+        txtEstadoCadUser = findViewById(R.id.txtEstadoCadUser);
         txtCPFCadUser = findViewById(R.id.txtCPFCadUser);
         txtEmailCadUser = findViewById(R.id.txtEmailCadUser);
         txtRGCadUser = findViewById(R.id.txtRGCadUser);
         txtProfissaoCadUser = findViewById(R.id.txtProfissaoCadUser);
-        txtSenhaCadUser = findViewById(R.id.txtCadTurSenha);
+        txtSenhaCadUser = findViewById(R.id.txtSenhaCadUser);
 
 
 
-        btnCancelar.setOnClickListener(new View.OnClickListener() {
+        btnCancelarUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
             }
         });
 
-        btnCadastrar.setOnClickListener(new View.OnClickListener() {
+        btnCadastrarUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Usuario usu = new Usuario();
@@ -143,7 +143,7 @@ public class TelaCadastrarUsuario extends AppCompatActivity {
 
                 } catch (Exception e) {
                     // Exibe uma mensagem de erro utilizando o Toast
-                    Toast.makeText(getApplicationContext(), "Atenção: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Atenção: " + e.getMessage(), Toast.LENGTH_LONG).show();
                 }
             }
         });

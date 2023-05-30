@@ -44,7 +44,7 @@ public class FotosTurismoEditarHolder extends RecyclerView.ViewHolder {
 
     public FotosTurismoEditarHolder(@NonNull View itemView) {
         super(itemView);
-        // por que isso tem que ficar dentro do GuiaHolder?
+        // por que isso tem que ficar dentro do TurismoHolder?
         nomeLocalTxt = (TextView) itemView.findViewById(R.id.nomeLocalTxt);
         btnEditar = (Button) itemView.findViewById(R.id.btnEditarTurismo);
         fotoImg = (ImageView) itemView.findViewById(R.id.fotoImgEditar);

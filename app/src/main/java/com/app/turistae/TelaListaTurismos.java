@@ -6,17 +6,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.view.View;
-
-import com.app.turistae.adapter.GuiaAdapter;
-import com.app.turistae.dataset.GuiaDataset;
-import com.app.turistae.model.Locais;
 
 public class TelaListaTurismos extends AppCompatActivity {
 
     private boolean grid = false;
     RecyclerView recyclerListaTurismo;
-    private GuiaAdapter guiaAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,15 +26,12 @@ public class TelaListaTurismos extends AppCompatActivity {
         recyclerListaTurismo.setLayoutManager(layoutManager);
 
         // setando o adapter
-        guiaAdapter = new GuiaAdapter(GuiaDataset.getLista());
-        recyclerListaTurismo.setAdapter(guiaAdapter);
+//        guiaAdapter = new GuiaAdapter(GuiaDataset.getLista());
+
 
         recyclerListaTurismo.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
     }
 
     // o que ta acontecendo aqui?
-    public void addLocalClick(View view) {
-        //COMO ADICIONAR O BOTAO E A FOTO??
-        guiaAdapter.adicionarItem(new Locais("Local 1", "É um local", 1));
-    }
+
 }

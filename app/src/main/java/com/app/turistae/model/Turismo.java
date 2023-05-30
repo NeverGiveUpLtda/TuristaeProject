@@ -1,6 +1,8 @@
 package com.app.turistae.model;
 
 public class Turismo {
+
+    private int id;
     private String nome;
     private Long telefone;
     private int numeroLocal;
@@ -15,7 +17,8 @@ public class Turismo {
 
     public Turismo() {}
 
-    public Turismo(String nome, Long telefone, int numeroLocal, String rua, String bairro, String cidade, String estado, String cadastroNacionalPessoasJuridicas, String descricao, int usuarioId, int categoriaId) {
+    public Turismo(int id, String nome, Long telefone, int numeroLocal, String rua, String bairro, String cidade, String estado, String cadastroNacionalPessoasJuridicas, String descricao, int usuarioId, int categoriaId) {
+        this.id = id;
         this.nome = nome;
         this.telefone = telefone;
         this.numeroLocal = numeroLocal;
@@ -27,6 +30,14 @@ public class Turismo {
         this.descricao = descricao;
         this.usuarioId = usuarioId;
         this.categoriaId = categoriaId;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome() {

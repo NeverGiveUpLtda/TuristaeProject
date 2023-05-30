@@ -1,67 +1,95 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/branco">
+    android:background="@color/azul_marinho">
 
-    <TextView
-        android:id="@+id/TxtNomeLocal"
-        android:layout_width="319dp"
-        android:layout_height="86dp"
-        android:layout_marginTop="24dp"
-        android:text="Casa de Show  The Blue Room"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ImgFotoLocal" />
 
-    <ImageView
-        android:id="@+id/ImgFotoLocal"
-        android:layout_width="238dp"
-        android:layout_height="183dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@mipmap/logo_turistae" />
-
-    <Button
-        android:id="@+id/BtnSaibaMais"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginBottom="100dp"
-        android:background="#FFFFFF"
-        android:shadowColor="#FAFAFA"
-        android:text="Saiba Mais"
-        android:textColor="#E8E8E8"
-        android:textColorHighlight="#8A5959"
-        android:textColorHint="#1F4EBD"
-        android:textColorLink="#B32626"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/TxtTextoLocal"
-        app:layout_constraintHorizontal_bias="0.958"
-        app:layout_constraintStart_toStartOf="@+id/TxtTextoLocal"
-        app:rippleColor="#F3F3F3"
-        app:strokeColor="#F3F0F0" />
-
-    <TextView
-        android:id="@+id/TxtTextoLocal"
-        android:layout_width="338dp"
-        android:layout_height="257dp"
-        android:layout_marginBottom="44dp"
-        android:text="Venha assistir a shows incríveis de Jazz, MPB, Samba e muito mais... "
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BtnSaibaMais"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent">
 
+
+
+
+        <ImageView
+            android:id="@+id/imgTurismo"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+             />
+
+        <TextView
+            android:id="@+id/txtTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Título do turismo"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/btnCurtir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Curtir" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Avaliação"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:numStars="5"
+            android:rating="0"
+            android:stepSize="0.5" />
+
+        <EditText
+            android:id="@+id/edit_text_descricao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Descrição da avaliação"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnAvaliar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Avaliar" />
+
+
+        <TextView
+            android:id="@+id/txtAvaliacoes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Avaliações anteriores"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerAvaliacoes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

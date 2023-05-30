@@ -151,10 +151,10 @@ public class TelaCadastrarUsuario extends AppCompatActivity {
     }
 
     private void inserirUsuario(Usuario usu) {
-        Call<Usuario> call = usuarioService.postUsuario(usu);
-        call.enqueue(new Callback<Usuario>() {
+        Call<Integer> call = usuarioService.postUsuario(usu);
+        call.enqueue(new Callback<Integer>() {
             @Override
-            public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+            public void onResponse(Call<Integer> call, Response<Integer> response) {
                 if (response.isSuccessful()) {
                     Toast.makeText(TelaCadastrarUsuario.this,
                             "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
@@ -165,7 +165,7 @@ public class TelaCadastrarUsuario extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<Usuario> call, Throwable t) {
+            public void onFailure(Call<Integer> call, Throwable t) {
                 Log.e("Falha ao conectar a API", t.getMessage());
             }
         });

@@ -22,7 +22,7 @@ public interface UsuarioService {
     Call<Usuario> getUsuarioById(@Path("id")int id);
 
     @POST("usuario")
-    Call<Usuario> postUsuario(@Body Usuario usuario);
+    Call<Integer> postUsuario(@Body Usuario usuario);
 
     @POST("usuario/login")
     Call<Usuario> postLoginUsuario(@Body Usuario usuario);

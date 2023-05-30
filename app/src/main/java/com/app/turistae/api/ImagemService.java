@@ -23,7 +23,7 @@ public interface ImagemService {
     Call<Imagem> getImagemById(@Path("id")int id);
 
     @POST("imagem")
-    Call<Imagem> postImagem(@Body Imagem Imagem);
+    Call<Integer> postImagem(@Body Imagem Imagem);
 
     @DELETE("imagem/{id}")
     Call<Void> deleteImagem(@Path("id") int id);

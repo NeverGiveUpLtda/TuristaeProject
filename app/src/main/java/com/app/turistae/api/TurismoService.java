@@ -22,7 +22,7 @@ public interface TurismoService {
     Call<Turismo> getTurismoById(@Path("id")int id);
 
     @POST("turismo")
-    Call<Turismo> postTurismo(@Body Turismo Turismo);
+    Call<Integer> postTurismo(@Body Turismo Turismo);
 
     @DELETE("turismo/{id}")
     Call<Void> deleteTurismo(@Path("id") int id);

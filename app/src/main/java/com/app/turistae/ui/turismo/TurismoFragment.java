@@ -198,30 +198,32 @@ public class TurismoFragment extends Fragment implements EasyPermissions.Permiss
     }
 
     private void inserirTurismo(Turismo turismo) {
-        Call<Turismo> call = turismoService.postTurismo(turismo);
-        call.enqueue(new Callback<Turismo>() {
+        Call<Integer> call = turismoService.postTurismo(turismo);
+        call.enqueue(new Callback<Integer>() {
             @Override
-            public void onResponse(Call<Turismo> call, Response<Turismo> response) {
+            public void onResponse(Call<Integer> call, Response<Integer> response) {
                 if (response.isSuccessful()) {
-                    Turismo turismoCadastrado = response.body();
-                    int turismoId = turismoCadastrado.getId();
-
+                    int turismoId = response.body();
                     Toast.makeText(getContext(), "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
 
-                    inserirImagem(turismoId); // Chama o método inserirImagem() passando o ID do turismo cadastrado
+                    try {
+                        inserirImagem(turismoId); // Chama o método inserirImagem() passando o ID do turismo cadastrado
+                    } catch (IOException e) {
+                        Toast.makeText(getContext(), "Náo foi possível converter/acessar imagem", Toast.LENGTH_LONG).show();
+                    }
                 } else {
                     Toast.makeText(getContext(), "Erro ao cadastrar, tente novamente!", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
-            public void onFailure(Call<Turismo> call, Throwable t) {
+            public void onFailure(Call<Integer> call, Throwable t) {
                 Log.e("Falha ao conectar a API", t.getMessage());
             }
         });
     }
 
-    private void inserirImagem(int turismoId) {
+    private void inserirImagem(int turismoId) throws IOException {
         if (listaImagens.size() != MAX_IMAGE_COUNT) {
             Toast.makeText(getActivity(), "Selecione exatamente 3 imagens", Toast.LENGTH_SHORT).show();
             return;
@@ -230,8 +232,7 @@ public class TurismoFragment extends Fragment implements EasyPermissions.Permiss
         // Para cada imagem selecionada, converta em base64 e envie para a API
         for (int i = 0; i < listaImagens.size(); i++) {
             Uri imageUri = listaImagens.get(i);
-            byte[] imageBytes = converterParaBytes(imageUri);
-            String imageBase64 = converterParaBase64(imageBytes);
+            String imageBase64 = uriToBase64(imageUri);
 
             // Chame um método para enviar a imagem usando o serviço/API correspondente,
             // passando o ID do turismo e a imagem base64
@@ -241,12 +242,12 @@ public class TurismoFragment extends Fragment implements EasyPermissions.Permiss
     }
 
     private void enviarImagem(Imagem imagem) {
-        Call<Imagem> call = imagemService.postImagem(imagem);
-        call.enqueue(new Callback<Imagem>() {
+        Call<Integer> call = imagemService.postImagem(imagem);
+        call.enqueue(new Callback<Integer>() {
             @Override
-            public void onResponse(Call<Imagem> call, Response<Imagem> response) {
+            public void onResponse(Call<Integer> call, Response<Integer> response) {
                 if (response.isSuccessful()) {
-                    Imagem imagemCadastrada = response.body();
+                    Integer imagemCadastrada = response.body();
                     Toast.makeText(getContext(), "Imagem cadastrada com sucesso!", Toast.LENGTH_SHORT).show();
 
                     // Realize as ações adicionais necessárias após cadastrar a imagem
@@ -257,34 +258,30 @@ public class TurismoFragment extends Fragment implements EasyPermissions.Permiss
             }
 
             @Override
-            public void onFailure(Call<Imagem> call, Throwable t) {
+            public void onFailure(Call<Integer> call, Throwable t) {
                 // Tratamento de falha na conexão com a API
                 Log.e("Falha ao conectar a API", t.getMessage());
                 Toast.makeText(getContext(), "Erro ao conectar à API, verifique sua conexão de internet!", Toast.LENGTH_SHORT).show();
             }
         });
     }
-    private byte[] converterParaBytes(Uri uri) {
-        try {
-            InputStream inputStream = getActivity().getContentResolver().openInputStream(uri);
-            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
 
-            byte[] buffer = new byte[1024];
-            int bytesRead;
-            while ((bytesRead = inputStream.read(buffer)) != -1) {
-                byteArrayOutputStream.write(buffer, 0, bytesRead);
-            }
+    public String uriToBase64(Uri uri) throws IOException {
+        Context context = requireContext();
+        InputStream inputStream = context.getContentResolver().openInputStream(uri);
+        ByteArrayOutputStream byteBuffer = new ByteArrayOutputStream();
 
-            return byteArrayOutputStream.toByteArray();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
+        int bufferSize = 4096;
+        byte[] buffer = new byte[bufferSize];
+        int len;
+        while ((len = inputStream.read(buffer)) != -1) {
+            byteBuffer.write(buffer, 0, len);
         }
+
+        byte[] byteArray = byteBuffer.toByteArray();
+        return Base64.encodeToString(byteArray, Base64.DEFAULT);
     }
 
-    private String converterParaBase64(byte[] bytes) {
-        return Base64.encodeToString(bytes, Base64.DEFAULT);
-    }
 
     // Método para obter as categorias do serviço categoriaService
     private void getCategorias() {

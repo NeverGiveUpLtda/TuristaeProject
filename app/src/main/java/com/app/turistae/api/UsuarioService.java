@@ -31,5 +31,5 @@ public interface UsuarioService {
     Call<Void> deleteUsuario(@Path("id") int id);
 
     @PUT("usuario/{id}")
-    Call<Usuario> editUsuario(@Path("id") int id, @Body Usuario usuario);
+    Call<Void> editUsuario(@Path("id") int id, @Body Usuario usuario);
 }

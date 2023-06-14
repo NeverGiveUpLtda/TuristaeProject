@@ -89,7 +89,6 @@ public class TelaLogin extends AppCompatActivity {
                     Usuario loggedUser = response.body();
                     saveUserToSharedPreferences(loggedUser); // Salvar o objeto Usuario no SharedPreferences
 
-
                     Intent intent = new Intent(TelaLogin.this, Menu_Navigation.class);
                     startActivity(intent);
                 }
@@ -105,8 +104,17 @@ public class TelaLogin extends AppCompatActivity {
     private void saveUserToSharedPreferences(Usuario usuario) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt("usuarioId", usuario.getId());
-        editor.putString("usuarioNome", usuario.getNomeUsuario());
+        editor.putString("usuarioNomeUser", usuario.getNomeUsuario());
         editor.putString("usuarioEmail", usuario.getEmail());
+        editor.putString("usuarioCidade", usuario.getCidade());
+        editor.putString("usuarioProfissap", usuario.getProfissao());
+        editor.putString("usuarioEstado", usuario.getEstado());
+        editor.putString("usuarioRua", usuario.getRua());
+        editor.putString("usuarioTelefone", String.valueOf(usuario.getTelefone()));
+        editor.putString("usuarioLogradouro", usuario.getNumeroCasa());
+        editor.putString("usuarioNome", usuario.getNome());
+        editor.putString("usuarioLogradouro", usuario.getNumeroCasa());
+        editor.putString("usuarioBairro", usuario.getBairro());
         editor.apply();
     }
 

@@ -5,8 +5,7 @@
     android:id="@+id/ConstraintLayuot"
     android:layout_width="match_parent"
     android:layout_height="200dp"
-    android:background="@color/azul_marinho"
-    android:onClick="saibaMaisButton">
+    android:background="@color/azul_marinho">
 
 
     <TextView
@@ -31,6 +30,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
+        android:baselineAlignBottom="false"
+        android:clickable="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/nomeLocalTxt"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,14 +48,14 @@
         android:text="TextView"
         android:textAlignment="center"
         android:textColor="#EBEBEB"
-        app:layout_constraintBottom_toBottomOf="@+id/btnEditarTurismo"
+        app:layout_constraintBottom_toBottomOf="@+id/btnSaibaMaisTurismo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.75"
         app:layout_constraintStart_toEndOf="@+id/fotoImgEditar"
         app:layout_constraintTop_toBottomOf="@+id/nomeLocalTxt" />
 
     <Button
-        android:id="@+id/btnEditarTurismo"
+        android:id="@+id/btnSaibaMaisTurismo"
         android:layout_width="141dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"

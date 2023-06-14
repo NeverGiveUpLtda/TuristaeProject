@@ -43,18 +43,18 @@ public class TelaCadastrarUsuario extends AppCompatActivity {
         btnCadastrarUser = (Button) findViewById(R.id.btnCadastrarUsuario);
 
         //campos do forms de cadastro do usuário
-        txtLoginCadUser = findViewById(R.id.txtLoginCadUser);
-        txtCidadeCadUser = findViewById(R.id.txtCidadeCadUser);
-        txtBairroCadUser = findViewById(R.id.txtBairroCadUser);
-        txtRuaCadUser = findViewById(R.id.txtRuaCadUser);
-        txtNumeroCasaCadUser = findViewById(R.id.txtNumeroCadUser);
-        txtTelefoneCadUser = findViewById(R.id.txtTelefoneCadUser);
+        txtLoginCadUser = findViewById(R.id.txtLoginUser);
+        txtCidadeCadUser = findViewById(R.id.txtCidadeUser);
+        txtBairroCadUser = findViewById(R.id.txtBairroUser);
+        txtRuaCadUser = findViewById(R.id.txtRuaUser);
+        txtNumeroCasaCadUser = findViewById(R.id.txtNumeroUser);
+        txtTelefoneCadUser = findViewById(R.id.txtTelefoneUser);
         txtNascimentoCadUser = findViewById(R.id.txtNascimentoCadUser);
         txtConfirmaSenhaCadUser = findViewById(R.id.txtSenhaConfirmaCadUser);
-        txtNomeCadUser = findViewById(R.id.txtNomeCadUser);
-        txtEstadoCadUser = findViewById(R.id.txtEstadoCadUser);
+        txtNomeCadUser = findViewById(R.id.txtUserNome);
+        txtEstadoCadUser = findViewById(R.id.txtEstadoUser);
         txtCPFCadUser = findViewById(R.id.txtCPFCadUser);
-        txtEmailCadUser = findViewById(R.id.txtEmailCadUser);
+        txtEmailCadUser = findViewById(R.id.txtEmailUser);
         txtRGCadUser = findViewById(R.id.txtRGCadUser);
         txtProfissaoCadUser = findViewById(R.id.txtProfissaoCadUser);
         txtSenhaCadUser = findViewById(R.id.txtSenhaCadUser);

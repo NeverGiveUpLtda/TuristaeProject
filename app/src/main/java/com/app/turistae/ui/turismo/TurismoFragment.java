@@ -2,6 +2,7 @@ package com.app.turistae.ui.turismo;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -24,6 +25,9 @@ import pub.devrel.easypermissions.AppSettingsDialog;
 import pub.devrel.easypermissions.EasyPermissions;
 import java.util.List;
 
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
@@ -41,6 +45,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.app.turistae.ErrorResponse;
 import com.app.turistae.R;
 import com.app.turistae.adapter.FotosPickerTurismoAdapter;
 import com.app.turistae.api.ApiClient;
@@ -51,6 +56,7 @@ import com.app.turistae.databinding.FragmentTurismoBinding;
 import com.app.turistae.model.Categoria;
 import com.app.turistae.model.Imagem;
 import com.app.turistae.model.Turismo;
+import com.google.gson.Gson;
 import com.santalu.maskara.widget.MaskEditText;
 
 import java.util.ArrayList;
@@ -111,7 +117,7 @@ public class TurismoFragment extends Fragment implements EasyPermissions.Permiss
                 if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
                     abrirSelecionadorImagem();
                 } else {
-                    ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_IMAGE_PICK);
+                    requestLauncher.launch(Manifest.permission.READ_EXTERNAL_STORAGE);
                 }
             }
         });
@@ -204,24 +210,61 @@ public class TurismoFragment extends Fragment implements EasyPermissions.Permiss
             public void onResponse(Call<Integer> call, Response<Integer> response) {
                 if (response.isSuccessful()) {
                     int turismoId = response.body();
-                    Toast.makeText(getContext(), "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Cadastro turismo realizado com sucesso!", Toast.LENGTH_SHORT).show();
 
-                    try {
-                        inserirImagem(turismoId); // Chama o método inserirImagem() passando o ID do turismo cadastrado
-                    } catch (IOException e) {
-                        Toast.makeText(getContext(), "Náo foi possível converter/acessar imagem", Toast.LENGTH_LONG).show();
+
+
+                    if (turismoId != 0) {
+                        try {
+                            inserirImagem(turismoId); // Chama o método inserirImagem() passando o ID do turismo cadastrado
+                            limparCampos();
+                        } catch (IOException e) {
+                            Toast.makeText(getContext(), "Não foi possível converter/acessar imagem", Toast.LENGTH_LONG).show();
+                        }
+                    } else {
+                        Toast.makeText(getContext(), "ID de turismo inválido", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(getContext(), "Erro ao cadastrar, tente novamente!", Toast.LENGTH_SHORT).show();
+                    ErrorResponse erro = new Gson().fromJson(response.errorBody().charStream(), ErrorResponse.class);
+
+                    String erros = "";
+                    for (String e : erro.getErrors()) {
+                        erros += "- " + e + "\n";
+                    }
+
+                    AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
+                    alert.setMessage(erros);
+                    alert.setPositiveButton("Fechar", null);
+                    alert.show();
                 }
             }
 
             @Override
             public void onFailure(Call<Integer> call, Throwable t) {
-                Log.e("Falha ao conectar a API", t.getMessage());
+                Toast.makeText(getContext(), "Falha na requisição: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
+
+
+    private void limparCampos() {
+        // Limpar os campos
+        txtCidadeCadTur.setText("");
+        txtBairroCadTur.setText("");
+        txtRuaCadTur.setText("");
+        txtNomeCadTur.setText("");
+        txtDescricaoCadTur.setText("");
+        txtCNPJCadTur.setText("");
+        txtEstadoCadTur.setText("");
+        txtTelefoneCadTur.setText("");
+        txtNumeroLocal.setText("");
+
+        // Limpar a lista de imagens
+        listaImagens.clear();
+        recyclerView.setAdapter(null);
+    }
+
+
 
     private void inserirImagem(int turismoId) throws IOException {
         if (listaImagens.size() != MAX_IMAGE_COUNT) {
@@ -240,6 +283,7 @@ public class TurismoFragment extends Fragment implements EasyPermissions.Permiss
             enviarImagem(imagemTur);
         }
     }
+
 
     private void enviarImagem(Imagem imagem) {
         Call<Integer> call = imagemService.postImagem(imagem);
@@ -335,17 +379,17 @@ public class TurismoFragment extends Fragment implements EasyPermissions.Permiss
         }
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == REQUEST_IMAGE_PICK) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                abrirSelecionadorImagem();
-            } else {
-                Toast.makeText(getActivity(), "Permissão de acesso ao armazenamento negada", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
+
+    private final ActivityResultLauncher<String> requestLauncher = registerForActivityResult(new ActivityResultContracts.RequestPermission(),
+            new ActivityResultCallback<Boolean>() {
+                @Override
+                public void onActivityResult(Boolean result) {
+                    if(result){
+                        abrirSelecionadorImagem();
+
+                    }
+                }
+            });
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

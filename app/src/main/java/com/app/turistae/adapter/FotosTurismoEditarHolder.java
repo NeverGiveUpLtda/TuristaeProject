@@ -46,7 +46,7 @@ public class FotosTurismoEditarHolder extends RecyclerView.ViewHolder {
         super(itemView);
         // por que isso tem que ficar dentro do TurismoHolder?
         nomeLocalTxt = (TextView) itemView.findViewById(R.id.nomeLocalTxt);
-        btnEditar = (Button) itemView.findViewById(R.id.btnEditarTurismo);
+        btnEditar = (Button) itemView.findViewById(R.id.btnSaibaMaisTurismo);
         fotoImg = (ImageView) itemView.findViewById(R.id.fotoImgEditar);
     }
 }

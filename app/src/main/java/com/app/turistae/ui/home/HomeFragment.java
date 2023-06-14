@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -66,6 +67,7 @@ public class HomeFragment extends Fragment {
                     configurarRecyclerView();
                 } else {
                     Log.e("Erro getTurismo", "Resposta não sucedida");
+                    Toast.makeText(getContext(), "Erro na requisição get", Toast.LENGTH_SHORT).show();
                 }
             }
 

@@ -1,6 +1,9 @@
 package com.app.turistae.model;
 
-public class Turismo {
+import java.io.Serializable;
+import java.util.List;
+
+public class Turismo implements Serializable {
 
     private int id;
     private String nome;
@@ -15,9 +18,11 @@ public class Turismo {
     private int usuarioId;
     private int categoriaId;
 
+    private List<Imagem> imagens;
+
     public Turismo() {}
 
-    public Turismo(int id, String nome, Long telefone, int numeroLocal, String rua, String bairro, String cidade, String estado, String cadastroNacionalPessoasJuridicas, String descricao, int usuarioId, int categoriaId) {
+    public Turismo(int id, String nome, Long telefone, int numeroLocal, String rua, String bairro, String cidade, String estado, String cadastroNacionalPessoasJuridicas, String descricao, int usuarioId, int categoriaId, List<Imagem> imagens) {
         this.id = id;
         this.nome = nome;
         this.telefone = telefone;
@@ -30,6 +35,15 @@ public class Turismo {
         this.descricao = descricao;
         this.usuarioId = usuarioId;
         this.categoriaId = categoriaId;
+        this.imagens = imagens;
+    }
+
+    public List<Imagem> getImagens() {
+        return imagens;
+    }
+
+    public void setImagens(List<Imagem> imagens) {
+        this.imagens = imagens;
     }
 
     public int getId() {

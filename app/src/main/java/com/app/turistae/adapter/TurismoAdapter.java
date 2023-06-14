@@ -2,10 +2,14 @@ package com.app.turistae.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,8 +19,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.turistae.R;
+import com.app.turistae.TelaSaibaMais;
 import com.app.turistae.api.ApiClient;
 import com.app.turistae.api.TurismoService;
+import com.app.turistae.model.Imagem;
 import com.app.turistae.model.Turismo;
 
 
@@ -47,9 +53,35 @@ public class TurismoAdapter extends RecyclerView.Adapter<TurismoAdapter.TurismoV
         Turismo tur = turismos.get(position);
         holder.getDescricaoTxt().setText(tur.getDescricao());
         holder.getNomeLocalTxt().setText(tur.getNome());
-//        holder.getBtnSaibaMais().setImageResource(tur.get)
-//        holder.getBtnSaibaMais().setOnClickListener(view -> econtrar(position));
+
+        List<Imagem> imagens = tur.getImagens();
+        if (imagens != null && !imagens.isEmpty()) {
+            Imagem primeiraImagemBase64 = imagens.get(0);
+            // Converter a primeira imagem Base64 de volta para um formato de imagem
+            byte[] decodedString = Base64.decode(primeiraImagemBase64.getString64(), Base64.DEFAULT);
+            Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+            // Definir a imagem na ImageView
+            holder.getFotoImg().setImageBitmap(decodedByte);
+        }
+
+        holder.getBtnSaibaMais().setOnClickListener(view -> {
+            int turismoId = tur.getId(); // Obtém o ID do turismo
+            abrirTelaSaibaMais(turismoId);
+        });
+
+
     }
+
+
+    private void abrirTelaSaibaMais(int turismoId) {
+        Intent intent = new Intent(context, TelaSaibaMais.class);
+        intent.putExtra("turismoId", turismoId);
+        context.startActivity(intent);
+    }
+
+
+
+
 
 //    private void econtrar(int position) {
 //        int id = turismos.get(position).getId();
@@ -87,13 +119,13 @@ public class TurismoAdapter extends RecyclerView.Adapter<TurismoAdapter.TurismoV
         private TextView nomeLocalTxt;
         private TextView descricaoTxt;
 
-        private ImageButton btnSaibaMais;
+        private Button btnSaibaMais;
 
-        public ImageButton getBtnSaibaMais() {
+        public Button getBtnSaibaMais() {
             return btnSaibaMais;
         }
 
-        public void setBtnSaibaMais(ImageButton btnSaibaMais) {
+        public void setBtnSaibaMais(Button btnSaibaMais) {
             this.btnSaibaMais = btnSaibaMais;
         }
 
@@ -130,6 +162,7 @@ public class TurismoAdapter extends RecyclerView.Adapter<TurismoAdapter.TurismoV
             nomeLocalTxt = (TextView) itemView.findViewById(R.id.nomeLocalTxt);
             descricaoTxt = (TextView) itemView.findViewById(R.id.descricaoTxt);
             fotoImg = (ImageView) itemView.findViewById(R.id.fotoImgEditar);
+            btnSaibaMais = (Button) itemView.findViewById(R.id.btnSaibaMaisTurismo);
         }
     }
 }
